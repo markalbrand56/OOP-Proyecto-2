@@ -31,4 +31,14 @@ public class vista{
     }
     return op;
   }
+
+      /**
+    * @param: String
+    * imprime mensajes
+    **/ 
+    public void mensaje(String mensaje){
+      System.out.println(mensaje);
+  }
+
+  
 }
