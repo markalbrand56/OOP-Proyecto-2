@@ -6,6 +6,8 @@ Fecha: 19/09/2021
 Vista. Responsable de toda interaccion con el usuario.
 ***************************************************/
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 public class vista{
   private Scanner scan;
   public vista(){
@@ -40,5 +42,16 @@ public class vista{
       System.out.println(mensaje);
   }
 
-  
+      /**
+    * @param: Arraylist<String>
+    * imprime mensajes en Arraylist de cadena
+    **/ 
+    public void mensaje(ArrayList<String> mensajearray){
+      for (int i = 0; i<mensajearray.size(); i++){
+          System.out.println(mensajearray.get(i));
+      }
+      
+  }
+
+
 }

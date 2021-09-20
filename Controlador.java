@@ -5,7 +5,7 @@
  */
 
 public class Controlador{
-    
+
     int menu;
     int area;
     int workers;
