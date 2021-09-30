@@ -1,7 +1,7 @@
 package arboles;
 
 public class Arbol {
-    protected int diametro;  // Cuánto espacio ocupa un solo árbol
+    protected double diametro;  // Cuánto espacio ocupa un solo árbol
     protected String especie;  // Nombre
 
     public Arbol(int diametro, String nombre){
@@ -9,7 +9,7 @@ public class Arbol {
         this.especie = nombre;
     }
 
-    public int getDiametro(){
+    public double getDiametro(){
         return diametro;
     }
 
