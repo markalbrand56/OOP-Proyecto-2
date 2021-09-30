@@ -1,5 +1,7 @@
 package terrenos;
 
+import arboles.*;
+
 public class BosqueLatifolladoA extends Terreno {
     public BosqueLatifolladoA(int area, int trabajadores){
         super(area, trabajadores);
@@ -14,7 +16,7 @@ public class BosqueLatifolladoA extends Terreno {
                 arbolActual = new Aguacatillo();
         }
         Double diametro = arbolActual.getDiametro();
-          //CALCULOS JIME
+          //CALCULOS 
          conversion = area_de_terreno/ 10000;
          espaciofinal= (int)(conversion/diametro);
   

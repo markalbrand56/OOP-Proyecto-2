@@ -17,7 +17,7 @@ public class BosqueManglar extends Terreno {
                 arbolActual = new Botoncillo();
         }
         Double diametro = arbolActual.getDiametro();
-          //CALCULOS JIME
+          //CALCULOS 
          conversion = area_de_terreno/ 10000;
          espaciofinal= (int)(conversion/diametro);
   
