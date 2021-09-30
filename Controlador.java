@@ -20,7 +20,16 @@ public class Controlador{
                 case 1:
                     // Datos de reforestación
                     int[] dimensiones = vista.size();
-                    int trabajadores = vista.trabajadores();
+                    int area = (dimensiones[0]) * (dimensiones[1]);
+                    int trabajadores = vista.trabajadores();                   
+
+                    // EJEMPLO
+
+                    terrenoActual = new BosqueMixto(area, trabajadores);
+                    int tipoArbol = vista.arbolesDisponibles(terrenoActual.getArbolesDispibles());
+                    int cantidadSemillas = terrenoActual.calc_semilla(tipoArbol);
+
+                    vista.mensaje("Semillas necesarias " + cantidadSemillas);
 
                     // 
 

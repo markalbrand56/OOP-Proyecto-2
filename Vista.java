@@ -153,11 +153,29 @@ public class Vista{
   public void despedida(){
 		System.out.println("Gracias por usar este programa, adios");
 	}
-	/*Metodo para mostrar mensaje de bienvenida al usuario
-	*/
-	public void bienvenida(){
-		System.out.println("Bienvendi@!");
-	}
 
+  public int arbolesDisponibles(String[] arboles){
+    int opcion = 0;
+    boolean ingresoCorrecto = false;
 
+    while (ingresoCorrecto != true) {
+      try {
+        System.out.println("Elija una de las siguientes especies de arboles compatibles con su terreno:");
+        for (int i = 0; i < arboles.length; i++) {
+          String mensaje = (i+1) + ". " + arboles[i];
+          System.out.println(mensaje);
+        }
+        opcion = scan.nextInt();
+
+        if(opcion<1 | opcion>(arboles.length)){
+          throw new InputMismatchException("Elija una opción válida");
+        }else{
+          ingresoCorrecto = true;
+        }
+      } catch (Exception e) {
+        scan = new Scanner(System.in);
+      }
+    }
+    return opcion;
+  }
 }

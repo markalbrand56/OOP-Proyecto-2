@@ -18,10 +18,7 @@ public class Terreno {
 
     //
     public int calc_semilla(int espacio_entresemillas){
-        conversion = area_de_terreno/ 10000;
-        espaciofinal= conversion/ espacio_entresemillas;
-
-        return espaciofinal;
+        return 0;
     }
     //
 
