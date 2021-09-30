@@ -10,9 +10,13 @@ public class BosqueLatiofolladoBE extends Terreno {
         Arbol arbolActual;
         switch(opcion){
             case 1:
-                arbolActual = new Encino();
+                arbolActual = new Caoba();
             case 2:
-                arbolActual = new Aguacatillo();
+                arbolActual = new Cedro();
+            case 3:
+                arbolActual = new Naranjo();
+            case 4:
+                arbolActual = new Ceiba();
         }
         Double diametro = arbolActual.getDiametro();
           //CALCULOS JIME
