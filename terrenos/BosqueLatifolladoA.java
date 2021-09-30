@@ -18,9 +18,8 @@ public class BosqueLatifolladoA extends Terreno {
         }
         Double diametro = arbolActual.getDiametro();
           //CALCULOS 
-         conversion = area_de_terreno/ 10000;
-         espaciofinal= (int)(conversion/diametro);
+          cantidad_de_semillas= (int)(Math.ceil(area_de_terreno/diametro));
   
-         return espaciofinal;
+          return cantidad_de_semillas;
      }
 }
