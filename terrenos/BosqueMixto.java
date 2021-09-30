@@ -16,7 +16,7 @@ public class BosqueMixto extends Terreno {
                    arbolActual = new Fresno();
            }
            Double diametro = arbolActual.getDiametro();
-             //CALCULOS JIME
+             //CALCULOS 
             conversion = area_de_terreno/ 10000;
             espaciofinal= (int)(conversion/diametro);
      
