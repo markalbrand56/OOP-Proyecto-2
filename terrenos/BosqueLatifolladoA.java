@@ -5,6 +5,7 @@ import arboles.*;
 public class BosqueLatifolladoA extends Terreno {
     public BosqueLatifolladoA(int area, int trabajadores){
         super(area, trabajadores);
+        arbolesDisponibles = new String[]{"Encino", "Aguacatillo"};
     }
 
     public int calc_semilla(int opcion){

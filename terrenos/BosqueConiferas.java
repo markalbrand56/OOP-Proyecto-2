@@ -4,6 +4,7 @@ import arboles.*;
 public class BosqueConiferas extends Terreno {
     public BosqueConiferas(int area, int trabajadores){
         super(area, trabajadores);
+        arbolesDisponibles = new String[]{"Pino"};
     }
 
     public int calc_semilla(int opcion){
@@ -18,7 +19,6 @@ public class BosqueConiferas extends Terreno {
          conversion = area_de_terreno/ 10000;
          espaciofinal= (int)(conversion/diametro);
   
-         return espaciofinal;
-        
+         return espaciofinal;    
    }
 }

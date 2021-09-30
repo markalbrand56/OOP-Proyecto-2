@@ -5,6 +5,7 @@ import arboles.*;
 public class MonteEspinoso extends Terreno {
     public MonteEspinoso(int area, int trabajadores){
         super(area, trabajadores);
+        arbolesDisponibles = new String[]{"Jiote", "Aripin", "Cactus"};
     }
 
     public int calc_semilla(int opcion){

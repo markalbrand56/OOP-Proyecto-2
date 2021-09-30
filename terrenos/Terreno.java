@@ -8,6 +8,7 @@ public class Terreno {
     protected int tiempo;
     protected int trabajadores;
     protected int conversion, espaciofinal;
+    protected String[] arbolesDisponibles;
     
 
     public Terreno(int area_de_terreno, int trabajadores){
@@ -50,5 +51,8 @@ public class Terreno {
 
     public int getTrabajadores(){
         return trabajadores;
+    }
+    public String[] getArbolesDispibles(){
+        return arbolesDisponibles;
     }
 }
