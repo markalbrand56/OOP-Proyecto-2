@@ -81,8 +81,8 @@ public class Vista{
    /*Metodo para ingresar el tipo de terreno
   @return tipo de suelo
   */
-  public String TipodeSuelo(){
-    String tipoSuelo="";
+  public int TipodeSuelo(){
+    int tipoSuelo=0;
     boolean ingresoCorrecto = false;
 
     while (ingresoCorrecto != true) {
