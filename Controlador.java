@@ -6,6 +6,7 @@
 
 public class Controlador{
     private static Vista vista = new Vista();
+    private static Terreno terrenoActual;  
 
     //Terreno terreno; //La clase todavía no se ha creado. 
 
@@ -18,6 +19,9 @@ public class Controlador{
                     // Datos de reforestación
                     int[] dimensiones = vista.size();
                     int trabajadores = vista.trabajadores();
+
+                    // 
+
                     break;
                 case 2:
                     // Ver áreas registradas

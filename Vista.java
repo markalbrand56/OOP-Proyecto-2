@@ -86,23 +86,17 @@ public class Vista{
     boolean ingresoCorrecto = false;
 
     while (ingresoCorrecto != true) {
-      int eleccion = 0;
       try {
         System.out.println("\nElija un tipo de terreno");
         /**
          * Despliegue de opciones
          */
-        eleccion=scan.nextInt(); 
+        tipoSuelo=scan.nextInt(); 
 
-        switch (eleccion) {
-          case 1:
-            tipoSuelo = "Suelo ejemplo";
-            ingresoCorrecto = true; 
-            break;
-        
-          default:
-            tipoSuelo = "Tipo de terreno";
-            break;
+        if(tipoSuelo<0){
+          throw new InputMismatchException("Ingrese una opción");
+        }else{
+          ingresoCorrecto = true;
         }
 
       } catch (Exception e) {
