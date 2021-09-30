@@ -4,7 +4,7 @@ public class Arbol {
     protected double diametro;  // Cuánto espacio ocupa un solo árbol
     protected String especie;  // Nombre
 
-    public Arbol(int diametro, String nombre){
+    public Arbol(double diametro, String nombre){
         this.diametro = diametro;
         this.especie = nombre;
     }
