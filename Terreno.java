@@ -1,5 +1,3 @@
-import terrenos.Terreno;
-
 public class Terreno {
     protected String tipo_de_terreno;
     protected int area_de_terreno;
