@@ -24,7 +24,7 @@ public class Terreno {
     }
     //
 
-    public int calc_tiempo(){
+    public int calc_tiempo(){//Revisar
         return 0;
     }
 
