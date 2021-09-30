@@ -28,7 +28,6 @@ public class vista{
     System.out.println(s);
     op = scan.nextInt();
   }catch (Exception e){
-        error();
         scan.next();
     }
     return op;
