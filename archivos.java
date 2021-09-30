@@ -1,3 +1,3 @@
-public class archivos {
+public class Archivos {
     
 }
