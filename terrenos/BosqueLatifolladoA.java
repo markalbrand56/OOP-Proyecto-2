@@ -9,14 +9,14 @@ public class BosqueLatifolladoA extends Terreno {
     }
 
     public int calc_semilla(int opcion){
-        Arbol arbolActual = null;
+        arbol = null;
         switch(opcion){
             case 1:
-                arbolActual = new Encino();
+                arbol = new Encino();
             case 2:
-                arbolActual = new Aguacatillo();
+                arbol = new Aguacatillo();
         }
-        Double diametro = arbolActual.getDiametro();
+        Double diametro = arbol.getDiametro();
           //CALCULOS 
           cantidad_de_semillas= (int)(Math.ceil(area_de_terreno/diametro));
   
