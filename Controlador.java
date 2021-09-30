@@ -8,7 +8,7 @@ import terrenos.*;
 
 public class Controlador{
     private static Vista vista = new Vista();
-    private static Terreno terrenoActual;  
+    private static Terreno terrenoActual;
 
     //Terreno terreno; //La clase todavía no se ha creado. 
 
@@ -25,11 +25,38 @@ public class Controlador{
 
                     // EJEMPLO
 
-                    terrenoActual = new BosqueMixto(area, trabajadores);
+                    int tipoTerreno = vista.tipoDeSuelo();
+                    switch (tipoTerreno) {
+                        case 1:
+                            terrenoActual = new BosqueConiferas(area, trabajadores);
+                            break;
+                        case 2:
+                            terrenoActual = new BosqueFragmentado(area, trabajadores);
+                            break;
+                        case 3:
+                            terrenoActual = new BosqueLatifolladoA(area, trabajadores);
+                            break;
+                        case 4:
+                            terrenoActual = new BosqueLatiofolladoBE(area, trabajadores);
+                            break;
+                        case 5:
+                            terrenoActual = new BosqueManglar(area, trabajadores);
+                            break;
+                        case 6:
+                            terrenoActual = new BosqueMixto(area, trabajadores);                            
+                            break;
+                        case 7:
+                            terrenoActual = new MonteEspinoso(area, trabajadores);
+                            break;
+                    
+                        default:
+                            break;
+                    }
+
                     int tipoArbol = vista.arbolesDisponibles(terrenoActual.getArbolesDispibles());
                     int cantidadSemillas = terrenoActual.calc_semilla(tipoArbol);
 
-                    vista.mensaje("Semillas necesarias " + cantidadSemillas);
+                    vista.mensaje("\nSe necesitan " + cantidadSemillas + " semillas de " + terrenoActual.getArbol());
 
                     // 
 
@@ -44,6 +71,7 @@ public class Controlador{
                 default:
                     break;
             }
+            opcion = vista.menuOpciones();
         }
     }
 

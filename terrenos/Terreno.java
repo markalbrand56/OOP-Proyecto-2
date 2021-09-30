@@ -1,5 +1,7 @@
 package terrenos;
 
+import arboles.Arbol;
+
 public class Terreno {
     protected String tipo_de_terreno;
     protected int area_de_terreno;
@@ -7,8 +9,10 @@ public class Terreno {
     protected int cantidad_de_semillas;
     protected int tiempo;
     protected int trabajadores;
-    protected int conversion, espaciofinal;
     protected String[] arbolesDisponibles;
+    protected Arbol arbol;
+    
+    protected int conversion, espaciofinal;
     
 
     public Terreno(int area_de_terreno, int trabajadores){
@@ -51,5 +55,8 @@ public class Terreno {
     }
     public String[] getArbolesDispibles(){
         return arbolesDisponibles;
+    }
+    public String getArbol(){
+        return arbol.getEspecie();
     }
 }

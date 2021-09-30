@@ -81,7 +81,7 @@ public class Vista{
    /*Metodo para ingresar el tipo de terreno
   @return tipo de suelo
   */
-  public int TipodeSuelo(){
+  public int tipoDeSuelo(){
     int tipoSuelo=0;
     boolean ingresoCorrecto = false;
 
@@ -93,7 +93,7 @@ public class Vista{
          */
         tipoSuelo=scan.nextInt(); 
 
-        if(tipoSuelo<0){
+        if(tipoSuelo<1 | tipoSuelo > 7){
           throw new InputMismatchException("Ingrese una opción");
         }else{
           ingresoCorrecto = true;
@@ -172,8 +172,9 @@ public class Vista{
         }else{
           ingresoCorrecto = true;
         }
-      } catch (Exception e) {
+      } catch (InputMismatchException e) {
         scan = new Scanner(System.in);
+        System.out.println(e.getMessage());
       }
     }
     return opcion;
