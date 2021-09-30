@@ -9,16 +9,14 @@ public class BosqueMixto extends Terreno {
            Arbol arbolActual;
            switch(opcion){
                case 1:
-                   arbolActual = new MangleBlanco();
+                   arbolActual = new Encino();
                case 2:
-                   arbolActual = new MangleBlanco();
-               case 3:
-                   arbolActual = new MangleBlanco();
+                   arbolActual = new Fresno();
            }
-           int diametro = arbolActual.getDiametro();
+           Double diametro = arbolActual.getDiametro();
              //CALCULOS JIME
             conversion = area_de_terreno/ 10000;
-            espaciofinal= conversion/diametro;
+            espaciofinal= (int)(conversion/diametro);
      
             return espaciofinal;
            
