@@ -11,4 +11,38 @@ public class Terreno {
         this.tiempo = tiempo;
         this.workers = workers;
     }
+
+    //
+    public int calc_semilla(){
+        return 0;
+    }
+    //
+
+    public int calc_tiempo(){
+        return 0;
+    }
+
+    public String getTipoDeTerreno(){
+        return tipo_de_terreno;
+    }
+
+    public int getAreaDeTerreno(){
+        return area_de_terreno;
+    }
+
+    public String getTipoDeSemilla(){
+        return tipo_de_semilla;
+    }
+
+    public int cantidadDeSemilla(){
+        return cantidad_de_semillas;
+    }
+
+    public int getTiempo(){
+        return tiempo;
+    }
+
+    public int getWorkers(){
+        return workers;
+    }
 }
