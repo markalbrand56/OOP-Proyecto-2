@@ -8,9 +8,9 @@ Vista. Responsable de toda interaccion con el usuario.
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-public class vista{
+public class Vista{
   private Scanner scan;
-  public vista(){
+  public Vista(){
 		scan = new Scanner(System.in);
 	}
   /*Metodo para elegír una opción
