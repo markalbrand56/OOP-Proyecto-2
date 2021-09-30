@@ -5,7 +5,7 @@ public class BosqueMixto extends Terreno {
         super(area, trabajadores);
     }
     
-      public calc_semilla(int opcion){
+      public int calc_semilla(int opcion){
            Arbol arbolActual;
            switch(opcion){
                case 1:
