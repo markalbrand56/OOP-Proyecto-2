@@ -5,20 +5,31 @@
  */
 
 public class Controlador{
-
-    int menu;
-    int area;
-    int workers;
-    int tipos_de_suelo;
-    int cantidad_de_semilla;
-    int costo;
-
+    private static Vista vista = new Vista();
 
     //Terreno terreno; //La clase todavía no se ha creado. 
 
-
     public static void main(String[] args) {
-        
+        int opcion = vista.menuOpciones();
+
+        while (opcion != 4) {
+            switch (opcion) {
+                case 1:
+                    // Datos de reforestación
+                    int[] dimensiones = vista.size();
+                    int trabajadores = vista.trabajadores();
+                    break;
+                case 2:
+                    // Ver áreas registradas
+                    break;
+                case 3:
+                    // Guardar datos
+                    break;
+            
+                default:
+                    break;
+            }
+        }
     }
 
 }
