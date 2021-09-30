@@ -1,12 +1,14 @@
 package terrenos;
 
+import arboles.*;
+
 public class BosqueMixto extends Terreno {
     public BosqueMixto(int area, int trabajadores){
         super(area, trabajadores);
     }
     
       public int calc_semilla(int opcion){
-           Arbol arbolActual;
+           Arbol arbolActual = null;
            switch(opcion){
                case 1:
                    arbolActual = new Encino();
