@@ -7,6 +7,8 @@ public class Terreno {
     protected int cantidad_de_semillas;
     protected int tiempo;
     protected int trabajadores;
+    protected int conversion, espaciofinal;
+    
 
     public Terreno(int area_de_terreno, int trabajadores){
         this.area_de_terreno = area_de_terreno;
@@ -14,8 +16,11 @@ public class Terreno {
     }
 
     //
-    public int calc_semilla(){
-        return 0;
+    public int calc_semilla(int espacio_entresemillas){
+        conversion = area_de_terreno/ 10000;
+        espaciofinal= conversion/ espacio_entresemillas;
+
+        return espaciofinal;
     }
     //
 
