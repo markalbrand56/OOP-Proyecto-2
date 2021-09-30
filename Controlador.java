@@ -4,6 +4,8 @@
  * @version: 0.1 
  */
 
+import terrenos.*;
+
 public class Controlador{
     private static Vista vista = new Vista();
     private static Terreno terrenoActual;  
