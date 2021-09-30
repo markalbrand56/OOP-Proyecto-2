@@ -8,27 +8,40 @@ Vista. Responsable de toda interaccion con el usuario.
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+
 public class Vista{
-  private Scanner scan;
+  private Scanner scan = new Scanner(System.in);
+
   public Vista(){
-		scan = new Scanner(System.in);
+		System.out.println("\n\nBienvenido\n\n");;
 	}
   /*Metodo para elegír una opción
   @return número de opción
   */
   public int menuOpciones(){
     int op=0;
-        try{
-      String s = "¿Que desea hacer?\n" +
+    boolean ingresoCorrecto = false;
+
+    while (ingresoCorrecto != true) {
+      try{
+        String s = "¿Que desea hacer?\n" +
           "1. Calcular datos de reforestación para un area\n" +
           "2. Ver áreas registradas\n" +
           "3. Guardar datos\n" +
           "4. Salir";
 
-    System.out.println(s);
-    op = scan.nextInt();
-  }catch (Exception e){
-        scan.next();
+      System.out.println(s);
+      op = scan.nextInt();
+
+      if(op<1 | op>4){
+        throw new InputMismatchException("Elija una opción válida.");
+      }else{
+        ingresoCorrecto = true;
+      }
+
+      }catch (InputMismatchException e){
+        scan = new Scanner(System.in);
+      } 
     }
     return op;
   }
@@ -37,17 +50,30 @@ public class Vista{
   @return array con ancho y largo del terreno
   */
   public int[] size(){
-    int[] medidas=new int[2]; 
-    try {
-      System.out.println("Ingrese el ancho del terreno");
-      int ancho=scan.nextInt(); 
-      System.out.println("Ingrese el largo del terreno");
-      int largo=scan.nextInt(); 
-      medidas[0]=ancho; 
-      medidas[1]=largo; 
-    } catch (Exception e) {
-      scan.next();
+    int[] medidas=new int[2];
+    boolean ingresoCorrecto = false;
+    
+    while (ingresoCorrecto != true) {
+      try {
+        System.out.println("Ingrese el ancho del terreno");
+        int ancho=scan.nextInt(); 
+        System.out.println("Ingrese el largo del terreno");
+        int largo=scan.nextInt();
+
+        medidas[0]=ancho; 
+        medidas[1]=largo; 
+  
+        if(ancho<=0 | largo<=0){
+          throw new InputMismatchException("Ingrese medidas válidas");
+        }else{
+          ingresoCorrecto = true;
+        }
+  
+      } catch (Exception e) {
+        scan = new Scanner(System.in);
+      }
     }
+
 
     return medidas; 
   }
@@ -56,14 +82,34 @@ public class Vista{
   @return tipo de suelo
   */
   public String TipodeSuelo(){
-    String Tipo_suelo="";
-     try {
-      System.out.println("Ingrese el tipo de terreno");
-      Tipo_suelo=scan.nextLine(); 
-     } catch (Exception e) {
-      scan.next();
-     }
-    return Tipo_suelo; 
+    String tipoSuelo="";
+    boolean ingresoCorrecto = false;
+
+    while (ingresoCorrecto != true) {
+      int eleccion = 0;
+      try {
+        System.out.println("\nElija un tipo de terreno");
+        /**
+         * Despliegue de opciones
+         */
+        eleccion=scan.nextInt(); 
+
+        switch (eleccion) {
+          case 1:
+            tipoSuelo = "Suelo ejemplo";
+            ingresoCorrecto = true; 
+            break;
+        
+          default:
+            tipoSuelo = "Tipo de terreno";
+            break;
+        }
+
+      } catch (Exception e) {
+        scan = new Scanner(System.in);
+      }      
+    }
+    return tipoSuelo; 
   }
 
      /*Metodo para ingresar el número de trabajadores disponibles
@@ -71,12 +117,23 @@ public class Vista{
   */
   public int trabajadores(){
     int trabajadores=0;
-     try {
-      System.out.println("Ingrese eel número de trabajadores disponibles");
-      trabajadores=scan.nextInt(); 
-     } catch (Exception e) {
-      scan.next();
-     }
+    boolean ingresoCorrecto = false;
+
+    while (ingresoCorrecto != true) {
+      try {
+       System.out.println("Ingrese el número de trabajadores disponibles");
+       trabajadores=scan.nextInt(); 
+
+       if(trabajadores <= 0){
+         throw new InputMismatchException("Elija una cantidad válida de trabajadores");
+       }else{
+         ingresoCorrecto = true;
+       }
+
+      } catch (InputMismatchException e) {
+        scan = new Scanner(System.in);
+      }
+    }
     return trabajadores; 
   }
 
