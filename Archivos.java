@@ -1,7 +1,11 @@
-/**
-* Esta es para manipular archivos
-* @version: 5-sept
-*/
+/***************************************************
+Archivos.java
+Autor: Diego Morales, Jimena Hernandez, Mark Albrand, Javier Azurdia
+Fecha: 19/09/2021
+
+Responsable para la interacción va con archivos de texto
+***************************************************/
+
 
 import java.io.File;
 import java.io.FileWriter;

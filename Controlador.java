@@ -10,8 +10,11 @@ public class Controlador{
     private static Vista vista = new Vista();
     private static Terreno terrenoActual;
 
-    //Terreno terreno; //La clase todavía no se ha creado. 
-
+     
+    /**
+     * Método main del programa
+     * @param args Argumentos de la línea de comando
+     */
     public static void main(String[] args) {
         int opcion = vista.menuOpciones();
 
