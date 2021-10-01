@@ -88,9 +88,14 @@ public class Vista{
     while (ingresoCorrecto != true) {
       try {
         System.out.println("\nElija un tipo de terreno");
-        /**
-         * Despliegue de opciones
-         */
+        String s = "1. Bosque latifoliado de baja elevación\n" +
+        "2. Bosque mixto\n" +
+        "3. Bosque latifoliado de altura\n" +
+        "4. Bosque fragmentado\n"+
+        "5. Bosque manglar\n" +
+        "6. Bosque mixto\n" +
+        "7. Monte espinoso\n"; 
+        System.out.println(s);
         tipoSuelo=scan.nextInt(); 
 
         if(tipoSuelo<1 | tipoSuelo > 7){
