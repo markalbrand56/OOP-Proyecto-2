@@ -2,21 +2,7 @@ package terrenos;
 
 import arboles.Arbol;
 
-public class Terreno {
-    
-    /**
-     * 
-     * @param tipo_de_terreno: nombre del tipo de terreno. 
-     * @param area_de_terreno: área en pijas cuadradas
-     * @param tipo_de_semilla: tipo de semilla que se puede plantar. 
-     * @param cantidad_de_semillas: 
-     * @param tiempo: 
-     * @param trabajadores: 
-     * @param arbolesDisponibles:
-     * @param arbol:
-     * 
-     */
-    
+public class Terreno {   
     protected String tipo_de_terreno;
     protected int area_de_terreno;
     protected String tipo_de_semilla;
@@ -25,9 +11,6 @@ public class Terreno {
     protected int trabajadores;
     protected String[] arbolesDisponibles;
     protected Arbol arbol;
-
-    
-    protected int conversion, espaciofinal;
     
 
     public Terreno(int area_de_terreno, int trabajadores){
