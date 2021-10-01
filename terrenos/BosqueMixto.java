@@ -1,13 +1,24 @@
+/**
+ * @date: September 19, 2021
+ * @author: Mark Albrand, Alejandro Azurdia, Diego Morales, Jimena Hernández.
+ * @version: 0.1 
+ * BosqueMixto.java
+ */
 package terrenos;
 
 import arboles.*;
 
+//Constructor BosqueMixto
 public class BosqueMixto extends Terreno {
     public BosqueMixto(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Encino", "Fresno"};
     }
     
+    /* Método calculo de semillas
+    * @param: opcion
+    * @return: cantidad_de_semillas
+    */
       public int calc_semilla(int opcion){
            Arbol arbolActual = null;
            switch(opcion){

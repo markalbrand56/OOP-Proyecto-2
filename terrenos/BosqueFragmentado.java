@@ -1,12 +1,24 @@
+/**
+ * @date: September 19, 2021
+ * @author: Mark Albrand, Alejandro Azurdia, Diego Morales, Jimena Hernández.
+ * @version: 0.1 
+ * BosqueFragmentado.java
+ */
+
 package terrenos;
 
 import arboles.*;
 
+//Constructor Bosqueconiferas 
 public class BosqueFragmentado extends Terreno {
     public BosqueFragmentado(int area, int trabajadores){
         super(area, trabajadores);
     }
 
+    /* Método calculo de semillas
+    * @param: opcion
+    * @return: cantidad_de-semillas
+    */
     public int calc_semilla(int opcion){
         Arbol arbolActual = null;
         switch(opcion){
