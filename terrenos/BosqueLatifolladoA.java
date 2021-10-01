@@ -1,13 +1,25 @@
+/**
+ * @date: September 19, 2021
+ * @author: Mark Albrand, Alejandro Azurdia, Diego Morales, Jimena Hernández.
+ * @version: 0.1 
+ * BosqueLatifolladoA.java
+ */
 package terrenos;
 
 import arboles.*;
 
+//Constructor BosquelatifolladoA
 public class BosqueLatifolladoA extends Terreno {
     public BosqueLatifolladoA(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Encino", "Aguacatillo"};
     }
 
+
+    /* Método calculo de semillas
+    * @param: opcion
+    * @return: cantidad_de_semillas
+    */
     public int calc_semilla(int opcion){
         arbol = null;
         switch(opcion){
