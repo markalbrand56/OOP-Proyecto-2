@@ -22,16 +22,16 @@ public class MonteEspinoso extends Terreno {
     * @return: cantidad_de_semillas
     */
     public int calc_semilla(int opcion){
-        Arbol arbolActual = null;
+        arbol = null;
         switch(opcion){
             case 1:
-                arbolActual = new Jiote();
+                arbol = new Jiote();
             case 2:
-                arbolActual = new Aripin();
+                arbol = new Aripin();
             case 3:
-                arbolActual = new Cactus();
+                arbol = new Cactus();
         }
-        Double diametro = arbolActual.getDiametro();
+        Double diametro = arbol.getDiametro();
           //CALCULOS
           cantidad_de_semillas= (int)(Math.ceil(area_de_terreno/diametro));
   

@@ -20,16 +20,16 @@ public class BosqueFragmentado extends Terreno {
     * @return: cantidad_de-semillas
     */
     public int calc_semilla(int opcion){
-        Arbol arbolActual = null;
+        arbol = null;
         switch(opcion){
             case 1:
-                arbolActual = new Conacaste();
+                arbol = new Conacaste();
             case 2:
-                arbolActual = new PaloBlanco();
+                arbol = new PaloBlanco();
             case 3:
-                arbolActual = new CaobaSur();
+                arbol = new CaobaSur();
         }
-        Double diametro = arbolActual.getDiametro();
+        Double diametro = arbol.getDiametro();
           //CALCULOS 
           cantidad_de_semillas= (int)(Math.ceil(area_de_terreno/diametro));
   

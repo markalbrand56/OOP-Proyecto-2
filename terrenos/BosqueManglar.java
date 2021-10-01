@@ -19,16 +19,16 @@ public class BosqueManglar extends Terreno {
     * @return: cantidad_de_semillas
     */
     public int calc_semilla(int opcion){
-        Arbol arbolActual = null;
+        arbol = null;
         switch(opcion){
             case 1:
-                arbolActual = new MangleNegro();
+                arbol = new MangleNegro();
             case 2:
-                arbolActual = new MangleBlanco();
+                arbol = new MangleBlanco();
             case 3:
-                arbolActual = new Botoncillo();
+                arbol = new Botoncillo();
         }
-        Double diametro = arbolActual.getDiametro();
+        Double diametro = arbol.getDiametro();
           //CALCULOS 
           cantidad_de_semillas= (int)(Math.ceil(area_de_terreno/diametro));
   

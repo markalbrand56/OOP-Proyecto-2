@@ -20,18 +20,18 @@ public class BosqueLatiofolladoBE extends Terreno {
     * @return: cantidad_de_semillas
     */
     public int calc_semilla(int opcion){
-        Arbol arbolActual = null;
+        arbol = null;
         switch(opcion){
             case 1:
-                arbolActual = new Caoba();
+                arbol = new Caoba();
             case 2:
-                arbolActual = new Cedro();
+                arbol = new Cedro();
             case 3:
-                arbolActual = new Naranjo();
+                arbol = new Naranjo();
             case 4:
-                arbolActual = new Ceiba();
+                arbol = new Ceiba();
         }
-        Double diametro = arbolActual.getDiametro();
+        Double diametro = arbol.getDiametro();
           //CALCULOS JIME
           cantidad_de_semillas= (int)(Math.ceil(area_de_terreno/diametro));
   

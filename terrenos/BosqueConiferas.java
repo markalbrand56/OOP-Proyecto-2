@@ -22,13 +22,13 @@ public class BosqueConiferas extends Terreno {
     * @return: cantidad_de-semillas
     */
     public int calc_semilla(int opcion){
-        Arbol arbolActual = null;
+        arbol = null;
         switch(opcion){
             case 1:
-                arbolActual = new Pino();
+                arbol = new Pino();
 
         }
-        Double diametro = arbolActual.getDiametro();
+        Double diametro = arbol.getDiametro();
          //CALCULOS 
          cantidad_de_semillas= (int)(Math.ceil(area_de_terreno/diametro));
   
