@@ -13,6 +13,7 @@ import arboles.*;
 public class BosqueFragmentado extends Terreno {
     public BosqueFragmentado(int area, int trabajadores){
         super(area, trabajadores);
+        arbolesDisponibles = new String[]{"Conacaste", "Palo blanco", "Caoba sur"};
     }
 
     /* Método calculo de semillas
