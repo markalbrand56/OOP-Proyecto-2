@@ -31,22 +31,22 @@ public class Controlador{
                     int tipoTerreno = vista.tipoDeSuelo();
                     switch (tipoTerreno) {
                         case 1:
-                            terrenoActual = new BosqueConiferas(area, trabajadores);
+                            terrenoActual = new BosqueLatiofolladoBE(area, trabajadores);
                             break;
                         case 2:
-                            terrenoActual = new BosqueFragmentado(area, trabajadores);
+                            terrenoActual = new BosqueMixto(area, trabajadores);                            
                             break;
                         case 3:
                             terrenoActual = new BosqueLatifolladoA(area, trabajadores);
                             break;
                         case 4:
-                            terrenoActual = new BosqueLatiofolladoBE(area, trabajadores);
+                            terrenoActual = new BosqueFragmentado(area, trabajadores);
                             break;
                         case 5:
                             terrenoActual = new BosqueManglar(area, trabajadores);
                             break;
                         case 6:
-                            terrenoActual = new BosqueMixto(area, trabajadores);                            
+                            terrenoActual = new BosqueConiferas(area, trabajadores);
                             break;
                         case 7:
                             terrenoActual = new MonteEspinoso(area, trabajadores);

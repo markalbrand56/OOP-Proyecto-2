@@ -93,7 +93,7 @@ public class Vista{
         "3. Bosque latifoliado de altura\n" +
         "4. Bosque fragmentado\n"+
         "5. Bosque manglar\n" +
-        "6. Bosque mixto\n" +
+        "6. Bosque coníferas\n" +
         "7. Monte espinoso\n"; 
         System.out.println(s);
         tipoSuelo=scan.nextInt(); 
