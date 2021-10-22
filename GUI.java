@@ -12,4 +12,5 @@ public class GUI {
         p.add(l);
         frame.add(p);
     }
+
 }
