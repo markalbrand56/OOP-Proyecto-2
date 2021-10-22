@@ -1,7 +1,7 @@
 /**
  * @date: September 19, 2021
  * @author: Mark Albrand, Alejandro Azurdia, Diego Morales, Jimena Hernández.
- * @version: 0.1 
+ * @version: 0.1
  */
 
 import terrenos.*;
@@ -9,9 +9,9 @@ import terrenos.*;
 public class Controlador{
     private static Vista vista = new Vista();
     private static Terreno terrenoActual;
-    private static GUI interfaz;
+    private static GUI interfaz = new GUI();;
 
-     
+
     /**
      * Método main del programa
      * @param args Argumentos de la línea de comando
@@ -19,15 +19,13 @@ public class Controlador{
     public static void main(String[] args) {
         int opcion = vista.menuOpciones();
 
-        interfaz = new GUI();
-
         while (opcion != 4) {
             switch (opcion) {
                 case 1:
                     // Datos de reforestación
                     int[] dimensiones = vista.size();
                     int area = (dimensiones[0]) * (dimensiones[1]);
-                    int trabajadores = vista.trabajadores();                   
+                    int trabajadores = vista.trabajadores();
 
                     // EJEMPLO
 
@@ -37,7 +35,7 @@ public class Controlador{
                             terrenoActual = new BosqueLatiofolladoBE(area, trabajadores);
                             break;
                         case 2:
-                            terrenoActual = new BosqueMixto(area, trabajadores);                            
+                            terrenoActual = new BosqueMixto(area, trabajadores);
                             break;
                         case 3:
                             terrenoActual = new BosqueLatifolladoA(area, trabajadores);
@@ -54,7 +52,7 @@ public class Controlador{
                         case 7:
                             terrenoActual = new MonteEspinoso(area, trabajadores);
                             break;
-                    
+
                         default:
                             break;
                     }
@@ -64,7 +62,7 @@ public class Controlador{
 
                     vista.mensaje("\nSe necesitan " + cantidadSemillas + " semillas de " + terrenoActual.getArbol());
 
-                    // 
+                    //
 
                     break;
                 case 2:
@@ -73,7 +71,7 @@ public class Controlador{
                 case 3:
                     // Guardar datos
                     break;
-            
+
                 default:
                     break;
             }
