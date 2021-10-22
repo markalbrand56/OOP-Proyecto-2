@@ -43,10 +43,10 @@ public class Terreno {
      * 
      * @return nada, por el momento. 
      */
-    public int calc_tiempo(int trabajadores, int semillas){//Revisar
+    public double calc_tiempo(int trabajadores, int semillas){//Revisar
         int tiempoxsemilla=5; 
         int tiempo_total=semillas*tiempoxsemilla; 
-        int tiempo_estimado=(tiempo_total/trabajadores)/60; 
+        double tiempo_estimado=(tiempo_total/trabajadores)/60; 
         return tiempo_estimado;
     }
 
