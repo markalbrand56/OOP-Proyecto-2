@@ -46,7 +46,7 @@ public class Terreno {
     public int calc_tiempo(int trabajadores, int semillas){//Revisar
         int tiempoxsemilla=5; 
         int tiempo_total=semillas*tiempoxsemilla; 
-        int tiempo_estimado=tiempo_total/trabajadores; 
+        int tiempo_estimado=(tiempo_total/trabajadores)/60; 
         return tiempo_estimado;
     }
 
