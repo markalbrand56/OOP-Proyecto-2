@@ -9,6 +9,7 @@ import terrenos.*;
 public class Controlador{
     private static Vista vista = new Vista();
     private static Terreno terrenoActual;
+    private static GUI interfaz;
 
      
     /**
@@ -17,6 +18,8 @@ public class Controlador{
      */
     public static void main(String[] args) {
         int opcion = vista.menuOpciones();
+
+        interfaz = new GUI();
 
         while (opcion != 4) {
             switch (opcion) {
