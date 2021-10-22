@@ -59,8 +59,9 @@ public class Controlador{
 
                     int tipoArbol = vista.arbolesDisponibles(terrenoActual.getArbolesDispibles());
                     int cantidadSemillas = terrenoActual.calc_semilla(tipoArbol);
-
+                    Double tiempo=terrenoActual.calc_tiempo(trabajadores, cantidadSemillas); 
                     vista.mensaje("\nSe necesitan " + cantidadSemillas + " semillas de " + terrenoActual.getArbol());
+                    vista.mensaje("\nSe necesitan " + tiempo + " horas para plantar todas las semillas aproximadamente");
 
                     //
 
