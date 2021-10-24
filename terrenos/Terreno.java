@@ -43,7 +43,7 @@ public class Terreno {
      * 
      * @return nada, por el momento. 
      */
-    public double calc_tiempo(int trabajadores, int semillas){//Revisar
+    public double calc_tiempo(int trabajadores, int semillas) throws ArithmeticException{ // ArithmeticExcepttion: Si el usuario ingresara 0 trabajadores
         double tiempoxsemilla=5; 
         double tiempo_total=semillas*tiempoxsemilla; 
         double tiempo_estimado=(tiempo_total/trabajadores)/60; 
