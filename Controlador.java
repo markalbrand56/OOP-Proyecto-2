@@ -67,10 +67,11 @@ public class Controlador{
                         tiempo = 0.0;
                     }
                     vista.mensaje("\nSe necesitan " + cantidadSemillas + " semillas de " + terrenoActual.getArbol());
+                    
                     if (tiempo>0) {
                         vista.mensaje("\nSe necesitan " + tiempo + " horas para plantar todas las semillas aproximadamente");                        
                     }else{
-                        vista.mensaje("No se pudo determinar el tiempo necesario para plantar todas las semillas");
+                        vista.mensaje("No se pudo determinar el tiempo necesario para plantar todas las semillas.\n");
                     }
 
                     //

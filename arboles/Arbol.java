@@ -7,7 +7,7 @@ Modelo de Arbol para el uso del controlador
 ***************************************************/
 package arboles;
 
-public class Arbol {
+public abstract class Arbol {
     protected Double diametro;  // Cuánto espacio ocupa un solo árbol
     protected String especie;  // Nombre
 
