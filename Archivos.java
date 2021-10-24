@@ -21,38 +21,52 @@ public class Archivos {
     * Constructor
     * @param nombreArchivo nombre del archivo
     */
-    Archivos(String nombreArchivo) throws IOException{
-        archivo = new File(nombreArchivo);
-        archivo.createNewFile();
+    Archivos(String nombreArchivo) throws IOException{ // Modificada por A. Azurdia
+        
+        try {
+            this.archivo = new File(nombreArchivo);
+            archivo.createNewFile();
+            vista.mensaje("Se ha creado el archivo con éxito");
+
+        } catch (IOException e) {
+            vista.mensaje("Ha ocurrido un error.");
+        }
+        
     }
 
     /**
     * Escribe a un archivo
     * @param linea linea a escribir
     */
-    public boolean escribir(String linea) throws IOException {
-        // 1 línea por parqueo
-        boolean resultado = false;
-
-        FileWriter escritor = new FileWriter(archivo);
-        escritor.write(linea);
-        escritor.close();
-
-        return resultado;
+    public void escribir(String string, String fileName)throws IOException{ // Método para escribir al final de un txt. 
+        try {
+            FileWriter fw = new FileWriter(fileName, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("\n"+string);
+            bw.close();
+            vista.mensaje("Guardado exitoso.");
+        } catch (Exception e) {
+            vista.error();
+        }
     }
     
-      /**
+    /**
     * Lee los datos del archivo
     * @return lineas del archivo
     */
-    public ArrayList<String> leer() throws IOException{
-        ArrayList<String> data = new ArrayList<String>();
-        Scanner myReader = new Scanner(archivo);
-        while (myReader.hasNextLine()) {
-            String localData = myReader.nextLine();
-            data.add(localData);
+    
+    public void leer(){
+        try {
+            Scanner scan = new Scanner(file);
+            while(scan.hasNextLine()){
+                String data = scan.nextLine();
+                vista.mensaje(data);
+                
+            }
+            scan.close();
+        } catch (Exception e) {
+            vista.error();
         }
-        myReader.close();
-        return data;
     }
+    
 }
