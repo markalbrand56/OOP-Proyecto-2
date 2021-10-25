@@ -114,6 +114,7 @@ public class Controlador{
                 }
                     if(ans == true){
                         vista.mensaje("Se han guardado los datos");
+                        temporal.clear(); // se borrará la memoria temporal del programa. 
                     }else{
                         vista.mensaje("Ha ocurrido un error");
                     }
