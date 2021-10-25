@@ -1,2 +1,2 @@
-Esta cadena de texto es únicamente de prueba. 
-Area: 400. Tipo: null. Tipo de arboles: Ceiba. Cantidad de personas: 3. 
+
+Area: 12000. Tipo: null. Tipo de arboles: Ceiba. Cantidad de personas: 33. 

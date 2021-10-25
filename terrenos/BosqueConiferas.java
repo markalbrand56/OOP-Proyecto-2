@@ -14,6 +14,7 @@ public class BosqueConiferas extends Terreno {
     public BosqueConiferas(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Pino"};
+        this.tipo_de_terreno = "Bosque coníferas";
     }
 
 
@@ -26,6 +27,7 @@ public class BosqueConiferas extends Terreno {
         switch(opcion){
             case 1:
                 arbol = new Pino();
+                break;
 
         }
         Double diametro = arbol.getDiametro();

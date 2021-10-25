@@ -14,6 +14,7 @@ public class BosqueFragmentado extends Terreno {
     public BosqueFragmentado(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Conacaste", "Palo blanco", "Caoba sur"};
+        this.tipo_de_terreno = "Bosque fragmentado";
     }
 
     /* Método calculo de semillas
@@ -25,10 +26,13 @@ public class BosqueFragmentado extends Terreno {
         switch(opcion){
             case 1:
                 arbol = new Conacaste();
+                break;
             case 2:
                 arbol = new PaloBlanco();
+                break;
             case 3:
                 arbol = new CaobaSur();
+                break;
         }
         Double diametro = arbol.getDiametro();
           //CALCULOS 

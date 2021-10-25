@@ -12,6 +12,7 @@ public class BosqueManglar extends Terreno {
     public BosqueManglar(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Mangle Negro", "Mangle Blanco", "Botoncillo"};
+        this.tipo_de_terreno = "Bosque manglar";
     }
 
     /* Método calculo de semillas
@@ -23,10 +24,13 @@ public class BosqueManglar extends Terreno {
         switch(opcion){
             case 1:
                 arbol = new MangleNegro();
+                break;
             case 2:
                 arbol = new MangleBlanco();
+                break;
             case 3:
                 arbol = new Botoncillo();
+                break;
         }
         Double diametro = arbol.getDiametro();
           //CALCULOS 
