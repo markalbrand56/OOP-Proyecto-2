@@ -13,6 +13,7 @@ public class BosqueLatifolladoA extends Terreno {
     public BosqueLatifolladoA(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Encino", "Aguacatillo"};
+        this.tipo_de_terreno = "Bosque latifollado de altura";
     }
 
 
@@ -25,8 +26,10 @@ public class BosqueLatifolladoA extends Terreno {
         switch(opcion){
             case 1:
                 arbol = new Encino();
+                break;
             case 2:
                 arbol = new Aguacatillo();
+                break;
         }
         Double diametro = arbol.getDiametro();
           //CALCULOS 

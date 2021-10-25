@@ -11,6 +11,8 @@ import java.util.InputMismatchException;
 
 public class Vista{
   private Scanner scan = new Scanner(System.in);
+  private int largoMinimo = 5;
+  private int anchoMinimo = 5;
 
   public Vista(){
 		System.out.println("\n\nBienvenido\n\n");;
@@ -24,7 +26,7 @@ public class Vista{
 
     while (ingresoCorrecto != true) {
       try{
-        String s = "¿Que desea hacer?\n" +
+        String s = "\n\n¿Que desea hacer?\n" +
           "1. Calcular datos de reforestación para un area\n" +
           "2. Ver áreas registradas\n" +
           "3. Guardar datos\n" +
@@ -63,7 +65,7 @@ public class Vista{
         medidas[0]=ancho; 
         medidas[1]=largo; 
   
-        if(ancho<=0 | largo<=0){
+        if(ancho<=0 | largo<=0 | largo < largoMinimo | ancho < anchoMinimo){
           throw new InputMismatchException("Ingrese medidas válidas");
         }else{
           ingresoCorrecto = true;

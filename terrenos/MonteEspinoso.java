@@ -14,6 +14,7 @@ public class MonteEspinoso extends Terreno {
     public MonteEspinoso(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Jiote", "Aripin", "Cactus"};
+        this.tipo_de_terreno = "Bosque monte espinoso";
     }
 
 
@@ -26,10 +27,13 @@ public class MonteEspinoso extends Terreno {
         switch(opcion){
             case 1:
                 arbol = new Jiote();
+                break;
             case 2:
                 arbol = new Aripin();
+                break;
             case 3:
                 arbol = new Cactus();
+                break;
         }
         Double diametro = arbol.getDiametro();
           //CALCULOS

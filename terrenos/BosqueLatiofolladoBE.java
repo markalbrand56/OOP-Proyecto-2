@@ -12,6 +12,7 @@ public class BosqueLatiofolladoBE extends Terreno {
     public BosqueLatiofolladoBE(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Caoba", "Cedro", "Naranjo", "Ceiba"};
+        this.tipo_de_terreno = "Bosque latifollado de baja elevación";
     }
 
 
@@ -24,12 +25,16 @@ public class BosqueLatiofolladoBE extends Terreno {
         switch(opcion){
             case 1:
                 arbol = new Caoba();
+                break;
             case 2:
                 arbol = new Cedro();
+                break;
             case 3:
                 arbol = new Naranjo();
+                break;
             case 4:
                 arbol = new Ceiba();
+                break;
         }
         Double diametro = arbol.getDiametro();
           //CALCULOS JIME

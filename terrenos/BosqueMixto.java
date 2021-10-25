@@ -13,6 +13,7 @@ public class BosqueMixto extends Terreno {
     public BosqueMixto(int area, int trabajadores){
         super(area, trabajadores);
         arbolesDisponibles = new String[]{"Encino", "Fresno"};
+        this.tipo_de_terreno = "Bosque mixto";
     }
     
     /* Método calculo de semillas
@@ -24,8 +25,10 @@ public class BosqueMixto extends Terreno {
            switch(opcion){
                case 1:
                     arbol = new Encino();
+                    break;
                case 2:
                     arbol = new Fresno();
+                    break;
            }
            Double diametro = arbol.getDiametro();
             //CALCULOS 

@@ -2,7 +2,7 @@ package terrenos;
 
 import arboles.Arbol;
 
-public class Terreno {
+public abstract class Terreno {
     
     
     protected String tipo_de_terreno;
@@ -34,18 +34,21 @@ public class Terreno {
      */
     
     //
-    public int calc_semilla(int espacio_entresemillas){
-        return 0;
-    }
+    public abstract int calc_semilla(int tipoArbol);
     //
 
     /**
      * 
      * @return nada, por el momento. 
      */
-    public int calc_tiempo(){//Revisar
-        return 0;
+    public double calc_tiempo(int trabajadores, int semillas) throws ArithmeticException{ // ArithmeticExcepttion: Si el usuario ingresara 0 trabajadores
+        double tiempoxsemilla=5; 
+        double tiempo_total=semillas*tiempoxsemilla; 
+        double tiempo_estimado=(tiempo_total/trabajadores)/60; 
+        return tiempo_estimado;
     }
+
+    
 
 
     /**
