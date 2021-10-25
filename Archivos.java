@@ -7,6 +7,7 @@ Responsable para la interacción va con archivos de texto
 ***************************************************/
 
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,51 +23,89 @@ public class Archivos {
     * @param nombreArchivo nombre del archivo
     */
     Archivos(String nombreArchivo) throws IOException{ // Modificada por A. Azurdia
-        
         try {
             this.archivo = new File(nombreArchivo);
             archivo.createNewFile();
-            vista.mensaje("Se ha creado el archivo con éxito");
 
         } catch (IOException e) {
-            vista.mensaje("Ha ocurrido un error.");
         }
         
     }
 
     /**
+     * Constructor 2
+     */
+    Archivos(){
+        // no hace nada. 
+    }
+
+    /**
     * Escribe a un archivo
-    * @param linea linea a escribir
+    * @param string linea a escribir. 
+    * @param fileName nombre del archivo. 
     */
-    public void escribir(String string, String fileName)throws IOException{ // Método para escribir al final de un txt. 
+    public boolean escribir(String string, String fileName)throws IOException{ // Método para escribir al final de un txt. 
+        boolean exito;
         try {
             FileWriter fw = new FileWriter(fileName, true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write("\n"+string);
             bw.close();
-            vista.mensaje("Guardado exitoso.");
+            exito = true;
+
         } catch (Exception e) {
-            vista.error();
+            exito = false;
+
         }
+        return exito;
+
+    }
+
+    /**
+     * 
+     * @param alString ArrayList con las cadenas de texto de los resultados a agregar. 
+     * @param fileName nombre del archivo. 
+     * @return regresa un boolean para confirmar o denegar haber hecho la acción. 
+     */
+    public boolean escribir(ArrayList<String> alString, String fileName)throws IOException{ // Método para escribir al final de un txt. 
+        boolean exito;
+        
+        try {
+            FileWriter fw = new FileWriter(fileName, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            for(int i = 0; i<alString.size(); i++){
+                bw.write("\n" + alString.get(i)); 
+            }
+            bw.close();
+            exito = true;
+        } catch (Exception e) {
+            exito = false;
+        }
+        return exito;
     }
     
     /**
-    * Lee los datos del archivo
-    * @return lineas del archivo
-    */
+     * 
+     * @param fileName nombre del archivo a leer. 
+     * @return regresa ArrayList con cadenas de texto. 
+     */
     
-    public void leer(){
+    public ArrayList<String> leer(String fileName){
+        ArrayList <String> data = new ArrayList<String>();
+        File file = new File(fileName);
         try {
             Scanner scan = new Scanner(file);
             while(scan.hasNextLine()){
-                String data = scan.nextLine();
-                vista.mensaje(data);
-                
+                data.add(scan.nextLine());
             }
             scan.close();
         } catch (Exception e) {
-            vista.error();
+            // ideas equivalentes a vista.error() ??? La verdad no se que mas hacer jaja. 
         }
+        return data;
     }
+
+
     
 }
