@@ -12,7 +12,7 @@ import terrenos.*;
 public class Controlador{
     private static Vista vista = new Vista();
     private static Terreno terrenoActual;
-    private static GUI interfaz = new GUI();
+    //private static GUI interfaz = new GUI();
     private static Archivos archivos = new Archivos();
 
     private static ArrayList<String> temporal = new ArrayList<String>();
