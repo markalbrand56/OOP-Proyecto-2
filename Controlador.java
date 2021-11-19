@@ -124,6 +124,8 @@ public class Controlador{
                     break;
                 
                 case 5:  // Estadísticas
+                    ScriptPython graficas = new ScriptPython();
+                    graficas.runScript("graficas.py", "Lunes, martes", "10, 16");
                     break;
 
                 default:
