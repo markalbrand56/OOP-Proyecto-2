@@ -120,6 +120,7 @@ public class Controlador{
                     }
                     break;
                 case 4:  // Información 
+                vista.informacion();
                     break;
                 
                 case 5:  // Estadísticas

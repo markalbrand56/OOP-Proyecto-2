@@ -30,8 +30,8 @@ public class Vista{
           "1. Calcular datos de reforestación para un area\n" +
           "2. Ver áreas registradas\n" +
           "3. Guardar datos\n" +
-          "4. Información de terrenos" + 
-          "5. Estadísticas" + 
+          "4. Información de terrenos\n" + 
+          "5. Estadísticas\n" + 
           "6. Salir";
 
       System.out.println(s);
@@ -187,5 +187,24 @@ public class Vista{
       }
     }
     return opcion;
+  }
+
+
+  public void informacion(){
+    mensaje("Información sobre los tipos de bosques:");
+    mensaje("\n 1. Bosque Coniferas: ");
+    mensaje("Es un bioma terrestre correspondiente a bosques de coníferas de latitudes medias de clima templado o subalpino, vegetación perennifolia, con veranos cálidos, inviernos fríos y pluviosidad suficiente en donde predominan los árboles gimnospermos o coníferas.");
+    mensaje("\n 2. Bosque fragmentado:");
+    mensaje("Transformación de un bosque continuo en muchas unidades más pequeñas y aisladas entre sí, cuya extensión real resultante es mucho menor que la del bosque original");
+    mensaje("\n 3. Bosque Latifollado de altura:");
+    mensaje("Cuentan con maderas preciosas a nivel nacional e internacional, como el roble o el encino.");
+    mensaje("\n 4. Bosque latifollado de baja elevación:");
+    mensaje("A diferencia de los bosques de baja elevación, estos se encuentran ubicados a más de 2,000 metros de altura sobre el nivel del mar.");
+    mensaje("\n 5. Bosque Mangalar: ");
+    mensaje("Formado por árboles muy tolerantes a las sales existentes en la zona intermareal cercana a la desembocadura de cursos de agua dulce en latitudes tropicales y subtropicales.");
+    mensaje("\n 5. Bosque Mixto: ");
+    mensaje("Son aquellos bosques que combinan equilibradamente árboles de angiospermas con gimnospermas.");
+    mensaje("\n 6. Monte Espinoso: ");
+    mensaje("La elevación varía desde el nivel del mar hasta los 300 m de altura. La vegetación natural está constituida mayormente por arbustos y plantas espinosas.");
   }
 }
