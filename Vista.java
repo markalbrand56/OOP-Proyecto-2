@@ -36,7 +36,7 @@ public class Vista{
       System.out.println(s);
       op = scan.nextInt();
 
-      if(op<1 | op>6){
+      if(op<1 | op>5){
         throw new InputMismatchException("Elija una opción válida.");
       }else{
         ingresoCorrecto = true;
