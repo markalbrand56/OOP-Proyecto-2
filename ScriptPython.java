@@ -4,7 +4,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 public class ScriptPython {
-    Process mProcess;
+    private Process mProcess;
 
     public void runScript(String archivo, String arg1, String arg2){
         Process process;
