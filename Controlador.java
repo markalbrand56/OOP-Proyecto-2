@@ -105,23 +105,23 @@ public class Controlador{
 
                     break;
                 case 3: // guardar los datos. 
-                boolean ans = false;
-                try {
-                    ans = archivos.escribir(temporal, "Resultados.txt");
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                    if(ans == true){
-                        vista.mensaje("Se han guardado los datos");
-                        temporal.clear(); // se borrará la memoria temporal del programa. 
-                    }else{
-                        vista.mensaje("Ha ocurrido un error");
+                    boolean ans = false;
+                    try {
+                        ans = archivos.escribir(temporal, "Resultados.txt");
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
                     }
-                    break;
+                        if(ans == true){
+                            vista.mensaje("Se han guardado los datos");
+                            temporal.clear(); // se borrará la memoria temporal del programa. 
+                        }else{
+                            vista.mensaje("Ha ocurrido un error");
+                        }
+                        break;
                 case 4:  // Información 
-                vista.informacion();
-                    break;
+                    vista.informacion();
+                        break;
                 
                 case 5:  // Estadísticas
                     ScriptPython graficas = new ScriptPython();
