@@ -101,26 +101,68 @@ public class Controlador{
                      */
 
                     //Guardando datos en memoria temporal del programa.
-                    temporal.add("Area: " + terrenoActual.getAreaDeTerreno() + ". Tipo: " + terrenoActual.getTipoDeTerreno() + ". Tipo de arboles: " + terrenoActual.getArbol() + ". Cantidad de personas: " + terrenoActual.getTrabajadores()+". Semillas necesarias: " + cantidadSemillas);
+                   //temporal.add("Area: " + terrenoActual.getAreaDeTerreno() + ". Tipo: " + terrenoActual.getTipoDeTerreno() + ". Tipo de arboles: " + terrenoActual.getArbol() + ". Cantidad de personas: " + terrenoActual.getTrabajadores()+". Semillas necesarias: " + cantidadSemillas);
+
+                    
+
+
+
+
 
                     break;
-                case 2:
-                    // Ver los resultados registrados.
+                case 2: // Ver los resultados registrados.
                     // Se visualizarán solamente los resultados que ya han sido registrados.
-                    ArrayList <String> mostrarArchivos = new ArrayList<String>();
-                    mostrarArchivos = archivos.leer("Resultados.txt");
-                    for(int i = 0; i<mostrarArchivos.size(); i++){
-                        vista.mensaje(mostrarArchivos.get(i));
+                    //int[] mostrarArchivos = new ArrayList<String>();
+                    //mostrarArchivos = archivos.leer("Resultados.txt");
+                    //for(int i = 0; i<mostrarArchivos.size(); i++){
+                    //    vista.mensaje(mostrarArchivos.get(i));
+                    //}
+
+                    // Devolver las estadísticas a esa mierda de python. 
+                    // Solamente se enviarán los datos guardados. 
+                    String statics;
+                    statics = seedsInTerrenos[0] + ", ";
+                    statics += seedsInTerrenos[1] + ", ";
+                    statics += seedsInTerrenos[2] + ", "; 
+                    statics += seedsInTerrenos[3] + ", "; 
+                    statics += seedsInTerrenos[4] + ", "; 
+                    statics += seedsInTerrenos[5] + ", ";
+                    statics += seedsInTerrenos[6] + ""; 
+
+                    String namesOfStatics = "Bosque coniferas, Bosque fragmentado, Bosque latifollado de altura, Bosque latifollado de baja elevacion, Bosque manglar, Bosque mixto, Bosque monte espinoso";
+                    
+/**
+ * case 5:  // Estadísticas
+                    ScriptPython graficas = new ScriptPython();
+                    try {
+                        graficas.runScript("graficas.py", "Lunes, martes", "10, 16");                        
+                    } catch (Exception e) {
+                        vista.mensaje(e.getMessage());
                     }
+                    break;
+ */
+
+                    ScriptPython graficas = new ScriptPython();
+                    try {
+                        graficas.runScript("graficas.py", namesOfStatics, statics);
+                    } catch (Exception e) {
+                        //TODO: handle exception
+                        System.out.println("Valio verga x2");
+                    }
+
+
+
 
                     break;
                 case 3: // guardar los datos.
-                boolean ans = false;
+                //boolean ans = false;
                 try {
-                    ans = archivos.escribir2(temporal, "Resultados.txt");
+                    archivos.escribir2(seedsInTerrenos, "Resultados.txt");
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
+                }
+                /**
                 }
                     if(ans == true){
                         vista.mensaje("Se han guardado los datos");
@@ -135,18 +177,12 @@ public class Controlador{
                             vista.mensaje("Ha ocurrido un error");
                         }
                         break;
+
+                **/
+                    
                 case 4:  // Información
                     vista.informacion();
                         break;
-
-                case 5:  // Estadísticas
-                    ScriptPython graficas = new ScriptPython();
-                    try {
-                        graficas.runScript("graficas.py", "Lunes, martes", "10, 16");                        
-                    } catch (Exception e) {
-                        vista.mensaje(e.getMessage());
-                    }
-                    break;
 
                 default:
                     break;
