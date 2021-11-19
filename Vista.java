@@ -28,11 +28,10 @@ public class Vista{
       try{
         String s = "\n\n¿Que desea hacer?\n" +
           "1. Calcular datos de reforestación para un area\n" +
-          "2. Ver áreas registradas\n" +
+          "2. Estadísticas\n" + 
           "3. Guardar datos\n" +
           "4. Información de terrenos\n" + 
-          "5. Estadísticas\n" + 
-          "6. Salir";
+          "5. Salir";
 
       System.out.println(s);
       op = scan.nextInt();
