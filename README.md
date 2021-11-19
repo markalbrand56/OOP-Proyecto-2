@@ -6,3 +6,7 @@
 
 ### Solución:
 *Desarrollar un programa para calcular cuanto tiempo y semillas se necesitan para reforestar un área determinada, especificando el tamaño , tipo de lugar (árido, bosque, desierto, etc.) y la cantidad de personas disponibles para el trabajo, de igual forma se calcularía el aproximado del presupuesto para dicho acto.*
+
+## Dependencias
+1. Python 3
+2. Matplotlib *(Python)*
