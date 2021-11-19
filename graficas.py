@@ -11,9 +11,6 @@ class Grafica(object):
         plt.bar(self.titulos, self.cantidades)
         plt.show()
 
-grafica = Grafica(["Lunes", "martes"], [10,15])
-#grafica.graficar()
-
 labels = sys.argv[1]
 labels = labels.split(",")
 cantidades = sys.argv[2]
