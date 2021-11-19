@@ -13,9 +13,6 @@ public abstract class Terreno {
     protected int trabajadores;
     protected String[] arbolesDisponibles;
     protected Arbol arbol;
-
-    
-    protected int conversion, espaciofinal;
     
     /**
      * 

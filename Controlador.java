@@ -34,7 +34,7 @@ public class Controlador{
          * 6. Bosque espinoso
          */
 
-        while (opcion != 4) {
+        while (opcion != 6) {
             switch (opcion) {
                 case 1:
                     // Datos de reforestación
@@ -101,7 +101,7 @@ public class Controlador{
                      */
 
                     //Guardando datos en memoria temporal del programa. 
-                    temporal.add("Area: " + terrenoActual.getAreaDeTerreno() + ". Tipo: " + terrenoActual.getTipoDeTerreno() + ". Tipo de arboles: " + terrenoActual.getArbol() + ". Cantidad de personas: " + terrenoActual.getTrabajadores()+". ");
+                    temporal.add("Area: " + terrenoActual.getAreaDeTerreno() + ". Tipo: " + terrenoActual.getTipoDeTerreno() + ". Tipo de arboles: " + terrenoActual.getArbol() + ". Cantidad de personas: " + terrenoActual.getTrabajadores()+". Semillas necesarias: " + cantidadSemillas);
 
                     break;
                 case 2:
@@ -128,6 +128,14 @@ public class Controlador{
                     }else{
                         vista.mensaje("Ha ocurrido un error");
                     }
+                    break;
+                case 4:  // Información 
+                vista.informacion();
+                    break;
+                
+                case 5:  // Estadísticas
+                    ScriptPython graficas = new ScriptPython();
+                    graficas.runScript("graficas.py", "Lunes, martes", "10, 16");
                     break;
 
                 default:
