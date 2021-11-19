@@ -23,6 +23,16 @@ public class Controlador{
      */
     public static void main(String[] args) {
         int opcion = vista.menuOpciones();
+        int [] seedsInTerrenos = new int [] {0, 0, 0, 0, 0, 0, 0};
+        /**
+         * 0. Bosque coniferas
+         * 1. Bosque fragmentado
+         * 2. Bosque latifollado
+         * 3. Bosque latifollado BE?
+         * 4. Bosque manglar
+         * 5. Bosque mixto
+         * 6. Bosque espinoso
+         */
 
         while (opcion != 6) {
             switch (opcion) {
@@ -67,36 +77,36 @@ public class Controlador{
                     Double tiempo;
 
                     try {
-                        tiempo=terrenoActual.calc_tiempo(trabajadores, cantidadSemillas);                         
+                        tiempo=terrenoActual.calc_tiempo(trabajadores, cantidadSemillas);
                     } catch (ArithmeticException e) {
                         tiempo = 0.0;
                     }
                     vista.mensaje("\nSe necesitan " + cantidadSemillas + " semillas de " + terrenoActual.getArbol());
-                    
+
                     if (tiempo>0) {
-                        vista.mensaje("\nSe necesitan " + tiempo + " horas para plantar todas las semillas aproximadamente");                        
+                        vista.mensaje("\nSe necesitan " + tiempo + " horas para plantar todas las semillas aproximadamente");
                     }else{
                         vista.mensaje("No se pudo determinar el tiempo necesario para plantar todas las semillas.\n");
                     }
 
 
-                    /** Orden de elementos en cadena de texto de memoria temporal del programa. 
+                    /** Orden de elementos en cadena de texto de memoria temporal del programa.
                      * Area del terreno
                      * Tipo del terreno
                      * Tipo de Árbol de terreno
                      * Tipo de semilla del terreno
-                     * Cantidad de semillas del terreno // pendiente. 
+                     * Cantidad de semillas del terreno // pendiente.
                      * Cantidad de mano de obra
-                     * 
+                     *
                      */
 
-                    //Guardando datos en memoria temporal del programa. 
+                    //Guardando datos en memoria temporal del programa.
                     temporal.add("Area: " + terrenoActual.getAreaDeTerreno() + ". Tipo: " + terrenoActual.getTipoDeTerreno() + ". Tipo de arboles: " + terrenoActual.getArbol() + ". Cantidad de personas: " + terrenoActual.getTrabajadores()+". Semillas necesarias: " + cantidadSemillas);
 
                     break;
                 case 2:
-                    // Ver los resultados registrados. 
-                    // Se visualizarán solamente los resultados que ya han sido registrados. 
+                    // Ver los resultados registrados.
+                    // Se visualizarán solamente los resultados que ya han sido registrados.
                     ArrayList <String> mostrarArchivos = new ArrayList<String>();
                     mostrarArchivos = archivos.leer("Resultados.txt");
                     for(int i = 0; i<mostrarArchivos.size(); i++){
@@ -104,25 +114,31 @@ public class Controlador{
                     }
 
                     break;
-                case 3: // guardar los datos. 
-                    boolean ans = false;
-                    try {
-                        ans = archivos.escribir(temporal, "Resultados.txt");
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
+                case 3: // guardar los datos.
+                boolean ans = false;
+                try {
+                    ans = archivos.escribir2(temporal, "Resultados.txt");
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                    if(ans == true){
+                        vista.mensaje("Se han guardado los datos");
+                        temporal.clear(); // se borrará la memoria temporal del programa.
+                    }else{
+                        vista.mensaje("Ha ocurrido un error");
                     }
                         if(ans == true){
                             vista.mensaje("Se han guardado los datos");
-                            temporal.clear(); // se borrará la memoria temporal del programa. 
+                            temporal.clear(); // se borrará la memoria temporal del programa.
                         }else{
                             vista.mensaje("Ha ocurrido un error");
                         }
                         break;
-                case 4:  // Información 
+                case 4:  // Información
                     vista.informacion();
                         break;
-                
+
                 case 5:  // Estadísticas
                     ScriptPython graficas = new ScriptPython();
                     graficas.runScript("graficas.py", "Lunes, martes", "10, 16");
