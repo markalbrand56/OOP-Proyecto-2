@@ -141,7 +141,11 @@ public class Controlador{
 
                 case 5:  // Estadísticas
                     ScriptPython graficas = new ScriptPython();
-                    graficas.runScript("graficas.py", "Lunes, martes", "10, 16");
+                    try {
+                        graficas.runScript("graficas.py", "Lunes, martes", "10, 16");                        
+                    } catch (Exception e) {
+                        vista.mensaje(e.getMessage());
+                    }
                     break;
 
                 default:
