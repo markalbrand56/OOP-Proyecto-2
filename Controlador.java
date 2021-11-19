@@ -23,6 +23,16 @@ public class Controlador{
      */
     public static void main(String[] args) {
         int opcion = vista.menuOpciones();
+        int [] seedsInTerrenos = new int [] {0, 0, 0, 0, 0, 0, 0};
+        /**
+         * 0. Bosque coniferas
+         * 1. Bosque fragmentado
+         * 2. Bosque latifollado
+         * 3. Bosque latifollado BE?
+         * 4. Bosque manglar
+         * 5. Bosque mixto
+         * 6. Bosque espinoso
+         */
 
         while (opcion != 4) {
             switch (opcion) {
@@ -107,7 +117,7 @@ public class Controlador{
                 case 3: // guardar los datos. 
                 boolean ans = false;
                 try {
-                    ans = archivos.escribir(temporal, "Resultados.txt");
+                    ans = archivos.escribir2(temporal, "Resultados.txt");
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

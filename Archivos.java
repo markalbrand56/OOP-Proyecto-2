@@ -67,7 +67,7 @@ public class Archivos {
      * @param fileName nombre del archivo. 
      * @return regresa un boolean para confirmar o denegar haber hecho la acción. 
      */
-    public boolean escribir(ArrayList<String> alString, String fileName)throws IOException{ // Método para escribir al final de un txt. 
+    public boolean escribir2(ArrayList<String> alString, String fileName)throws IOException{ // Método para escribir al final de un txt. 
         boolean exito;
         
         try {
@@ -105,7 +105,5 @@ public class Archivos {
         }
         return data;
     }
-
-
     
 }
