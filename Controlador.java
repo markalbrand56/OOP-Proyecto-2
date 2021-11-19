@@ -24,7 +24,7 @@ public class Controlador{
     public static void main(String[] args) {
         int opcion = vista.menuOpciones();
 
-        while (opcion != 4) {
+        while (opcion != 6) {
             switch (opcion) {
                 case 1:
                     // Datos de reforestación
@@ -118,6 +118,11 @@ public class Controlador{
                     }else{
                         vista.mensaje("Ha ocurrido un error");
                     }
+                    break;
+                case 4:  // Información 
+                    break;
+                
+                case 5:  // Estadísticas
                     break;
 
                 default:

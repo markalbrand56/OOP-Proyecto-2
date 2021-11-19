@@ -30,12 +30,14 @@ public class Vista{
           "1. Calcular datos de reforestación para un area\n" +
           "2. Ver áreas registradas\n" +
           "3. Guardar datos\n" +
-          "4. Salir";
+          "4. Información de terrenos" + 
+          "5. Estadísticas" + 
+          "6. Salir";
 
       System.out.println(s);
       op = scan.nextInt();
 
-      if(op<1 | op>4){
+      if(op<1 | op>6){
         throw new InputMismatchException("Elija una opción válida.");
       }else{
         ingresoCorrecto = true;
