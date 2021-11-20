@@ -16,41 +16,43 @@ import java.util.Scanner;
 
 public class Archivos {
     File archivo;
-    int [] seedsInTerrenos = new int []{0, 0, 0, 0, 0, 0, 0};
+    int [] seedsInTerrenos;
     /**
-         * 0. Bosque coniferas
-         * 1. Bosque fragmentado
-         * 2. Bosque latifollado
-         * 3. Bosque latifollado BE?
-         * 4. Bosque manglar
-         * 5. Bosque mixto
-         * 6. Bosque espinoso
-         */
+     * 0. Bosque coniferas
+     * 1. Bosque fragmentado
+     * 2. Bosque latifollado
+     * 3. Bosque latifollado BE?
+     * 4. Bosque manglar
+     * 5. Bosque mixto
+     * 6. Bosque espinoso
+     */
 
     /**
     * Constructor
     * @param nombreArchivo nombre del archivo
     */
-    Archivos(String nombreArchivo) throws IOException{ // Modificada por A. Azurdia
+    public Archivos(String nombreArchivo) throws IOException{
         try {
             this.archivo = new File(nombreArchivo);
             archivo.createNewFile();
+            leer(nombreArchivo);
 
-
-        } catch (IOException e) {
-        }
-        
+        }catch (IOException e) {
+        } 
     }
 
     /**
-     * Constructor 2
+     * Método getter del array de tipo int "seedsInTerrenos"
+     * @return int[] seedsInTerrenos. 
      */
-    Archivos(){
-        // no hace nada. 
+    public int[] getSeedsInTerrenos(){
+        return seedsInTerrenos;
     }
 
+
+
     /**
-    * Escribe a un archivo
+    * Método que escribe una línea en un archivo txt. 
     * @param string linea a escribir. 
     * @param fileName nombre del archivo. 
     */
@@ -72,7 +74,7 @@ public class Archivos {
     }
 
     /**
-     * 
+     * Método para escribir un REESCRIBIR un txt, como una lista, a partir de un array de tipo int. 
      * @param alString Array definido. Es lo que se guardará en el txt.  
      * @param fileName nombre del archivo. 
      * @return regresa un boolean para confirmar o denegar haber hecho la acción. 
@@ -98,12 +100,12 @@ public class Archivos {
 
     
     /**
-     * 
+     * Método para leer los archivos de un txt e ingresarlos en un Array de tipo int. 
      * @param fileName nombre del archivo a leer. 
      * @return regresa ArrayList con cadenas de texto. 
      */
     
-    public int[] leer(String fileName){
+    public void leer(String fileName){
         //ArrayList <String> data = new ArrayList<String>();
         File file = new File(fileName);
         try {
@@ -119,9 +121,7 @@ public class Archivos {
             scan.close();
         } catch (Exception e) {
             // ideas equivalentes a vista.error() ??? La verdad no se que mas hacer jaja. 
-            System.out.println("valio putas"); 
         }
-        return seedsInTerrenos;
     }
 
     /**

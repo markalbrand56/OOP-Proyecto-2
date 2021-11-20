@@ -158,10 +158,16 @@ public class Vista{
       
   }
 
+  
   public void despedida(){
 		System.out.println("Gracias por usar este programa, adios");
 	}
 
+  /**
+   * ¿Qué árboles están disponibles?
+   * @param arboles array de Strings de árboles, que se mostrarán como lista  los usuarios. 
+   * @return opción que eligió el usuario. 
+   */
   public int arbolesDisponibles(String[] arboles){
     int opcion = 0;
     boolean ingresoCorrecto = false;
@@ -189,6 +195,9 @@ public class Vista{
   }
 
 
+  /**
+   * Método que muestra la información de todos los árboles. 
+   */
   public void informacion(){
     mensaje("Información sobre los tipos de bosques:");
     mensaje("\n 1. Bosque Coniferas: ");

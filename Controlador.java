@@ -5,23 +5,27 @@
  */
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import terrenos.*;
 
 public class Controlador{
     private static Vista vista = new Vista();
     private static Terreno terrenoActual;
+    private static Archivos archivo;
     //private static GUI interfaz = new GUI();
-    private static Archivos archivos = new Archivos();
-
-    private static ArrayList<String> temporal = new ArrayList<String>();
-
+    
     /**
      * Método main del programa
      * @param args Argumentos de la línea de comando
      */
     public static void main(String[] args) {
+        
+        try {
+           archivo = new Archivos("Resultados.txt");
+    
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        
         int opcion = vista.menuOpciones();
         int [] seedsInTerrenos = new int [] {0, 0, 0, 0, 0, 0, 0};
         /**
@@ -74,6 +78,9 @@ public class Controlador{
 
                     int tipoArbol = vista.arbolesDisponibles(terrenoActual.getArbolesDispibles());
                     int cantidadSemillas = terrenoActual.calc_semilla(tipoArbol);
+
+                    
+
                     Double tiempo;
 
                     try {
@@ -88,37 +95,10 @@ public class Controlador{
                     }else{
                         vista.mensaje("No se pudo determinar el tiempo necesario para plantar todas las semillas.\n");
                     }
-
-
-                    /** Orden de elementos en cadena de texto de memoria temporal del programa.
-                     * Area del terreno
-                     * Tipo del terreno
-                     * Tipo de Árbol de terreno
-                     * Tipo de semilla del terreno
-                     * Cantidad de semillas del terreno // pendiente.
-                     * Cantidad de mano de obra
-                     *
-                     */
-
-                    //Guardando datos en memoria temporal del programa.
-                   //temporal.add("Area: " + terrenoActual.getAreaDeTerreno() + ". Tipo: " + terrenoActual.getTipoDeTerreno() + ". Tipo de arboles: " + terrenoActual.getArbol() + ". Cantidad de personas: " + terrenoActual.getTrabajadores()+". Semillas necesarias: " + cantidadSemillas);
-
-                    
-
-
-
-
-
                     break;
+                
                 case 2: // Ver los resultados registrados.
-                    // Se visualizarán solamente los resultados que ya han sido registrados.
-                    //int[] mostrarArchivos = new ArrayList<String>();
-                    //mostrarArchivos = archivos.leer("Resultados.txt");
-                    //for(int i = 0; i<mostrarArchivos.size(); i++){
-                    //    vista.mensaje(mostrarArchivos.get(i));
-                    //}
-
-                    // Devolver las estadísticas a esa mierda de python. 
+                    // Devolver las estadísticas a la graficadora de python. 
                     // Solamente se enviarán los datos guardados. 
                     String statics;
                     statics = seedsInTerrenos[0] + ", ";
@@ -130,59 +110,32 @@ public class Controlador{
                     statics += seedsInTerrenos[6] + ""; 
 
                     String namesOfStatics = "Bosque coniferas, Bosque fragmentado, Bosque latifollado de altura, Bosque latifollado de baja elevacion, Bosque manglar, Bosque mixto, Bosque monte espinoso";
-                    
-/**
- * case 5:  // Estadísticas
-                    ScriptPython graficas = new ScriptPython();
-                    try {
-                        graficas.runScript("graficas.py", "Lunes, martes", "10, 16");                        
-                    } catch (Exception e) {
-                        vista.mensaje(e.getMessage());
-                    }
-                    break;
- */
-
                     ScriptPython graficas = new ScriptPython();
                     try {
                         graficas.runScript("graficas.py", namesOfStatics, statics);
+                        System.out.println("Se ha enviado los archivos al programa de python. DEBES ELIMINAR ESTO.");
                     } catch (Exception e) {
                         //TODO: handle exception
                         System.out.println("Valio verga x2");
                     }
 
-
-
-
                     break;
-                case 3: // guardar los datos.
-                //boolean ans = false;
-                try {
-                    archivos.escribir2(seedsInTerrenos, "Resultados.txt");
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                /**
-                }
-                    if(ans == true){
-                        vista.mensaje("Se han guardado los datos");
-                        temporal.clear(); // se borrará la memoria temporal del programa.
-                    }else{
-                        vista.mensaje("Ha ocurrido un error");
-                    }
-                        if(ans == true){
-                            vista.mensaje("Se han guardado los datos");
-                            temporal.clear(); // se borrará la memoria temporal del programa.
-                        }else{
-                            vista.mensaje("Ha ocurrido un error");
-                        }
-                        break;
 
-                **/
+
+                case 3: // guardar los datos.
+                    //boolean ans = false;
+                    try {
+                        archivo.escribir2(seedsInTerrenos, "Resultados.txt");
+                        
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    break;
                     
                 case 4:  // Información
                     vista.informacion();
-                        break;
+                    break;
 
                 default:
                     break;
