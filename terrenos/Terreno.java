@@ -111,4 +111,6 @@ public abstract class Terreno {
     public String getArbol(){
         return arbol.getEspecie();
     }
+
+    public abstract String recomendaciones();
 }
