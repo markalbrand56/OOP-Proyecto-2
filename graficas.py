@@ -8,17 +8,19 @@ class Grafica(object):
         self.cantidades = cantidades
     
     def graficar(self):
-
+        """Método para generar una gráfica de barraas"""
         plt.bar(self.titulos, self.cantidades)
-        #plt.xticks(rotation=45)
         plt.show()
 
+## EJECUCIÓN ##
 labels = sys.argv[1]  # Primer argumento de la linea de comando
 labels = labels.split(",")
+
 cantidades = sys.argv[2]  # Segundo argumento de la linea de comando
 cantidades = cantidades.split(",")
+
 for i in range(len(cantidades)):
-    cantidades[i] = int(cantidades[i])
+    cantidades[i] = int(cantidades[i])  # Conversión de los datos numéricos
 
 grafica2 = Grafica(labels, cantidades)
 grafica2.graficar()
