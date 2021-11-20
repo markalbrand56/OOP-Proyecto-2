@@ -40,7 +40,7 @@ public class BosqueLatifolladoA extends Terreno {
 
      @Override
      public String recomendaciones() {
-         String s="Antes de usar fertilizantes químicos, la mejor opción es usar suplementos para el suelo de origen natural, como una composta. Esto le da más oxigenación a la tierra, evita la erosión y retiene mejor la humedad."; 
+         String s="\n"+"Consejo: Antes de usar fertilizantes químicos, la mejor opción es usar suplementos para el suelo de origen natural, como una composta. Esto le da más oxigenación a la tierra, evita la erosión y retiene mejor la humedad."; 
           return s;
      }
 

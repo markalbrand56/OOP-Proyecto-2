@@ -45,7 +45,7 @@ public class BosqueLatiofolladoBE extends Terreno {
 
      @Override
      public String recomendaciones() {
-         String s="Enriquece el suelo con materia orgánica, es posible utilizar fertilizante natural hecho con residuos orgánicos como lo es la composta. Esto le permite mejor oxigenación al suelo, evitar la erosión del mismo y poder retener mejor la humedad. Esta forma también se estará protegiendo a la vegetación para obtener mejores nutrientes para su sano crecimiento."; 
+         String s="\n"+"Consejo: Enriquece el suelo con materia orgánica, es posible utilizar fertilizante natural hecho con residuos orgánicos como lo es la composta. Esto le permite mejor oxigenación al suelo, evitar la erosión del mismo y poder retener mejor la humedad. Esta forma también se estará protegiendo a la vegetación para obtener mejores nutrientes para su sano crecimiento."; 
           return s;
      }
       
