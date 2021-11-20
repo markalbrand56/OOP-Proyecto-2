@@ -149,7 +149,7 @@ public class Controlador{
                     statics += staticsArray[5] + ", ";
                     statics += staticsArray[6] + ""; 
 
-                    String namesOfStatics = "Bosque coniferas, Bosque fragmentado, Bosque latifollado de altura, Bosque latifollado de baja elevacion, Bosque manglar, Bosque mixto, Bosque monte espinoso";
+                    String namesOfStatics = "Coniferas, Fragmentado, Latifollado A, Latifollado BA, Manglar, Mixto, Monte espinoso";
                     ScriptPython graficas = new ScriptPython();
                     try {
                         graficas.runScript("graficas.py", namesOfStatics, statics);
