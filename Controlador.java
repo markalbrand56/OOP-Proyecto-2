@@ -42,7 +42,7 @@ public class Controlador{
          * 6. Bosque espinoso
          */
 
-        while (opcion != 6) {
+        while (opcion != 5) {
             switch (opcion) {
                 case 1:
                     // Datos de reforestación
