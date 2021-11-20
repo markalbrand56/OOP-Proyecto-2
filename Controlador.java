@@ -127,6 +127,13 @@ public class Controlador{
                     vista.informacion();
                     break;
 
+                case 5:  // Información
+                    vista.despedida();
+                    break;
+
+
+
+
                 default:
                     break;
             }
