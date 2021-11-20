@@ -5,6 +5,9 @@
  */
 
 import java.io.IOException;
+
+import javax.xml.namespace.QName;
+
 import terrenos.*;
 
 public class Controlador{
@@ -27,7 +30,8 @@ public class Controlador{
         }
         
         int opcion = vista.menuOpciones();
-        int [] seedsInTerrenos = new int [] {0, 0, 0, 0, 0, 0, 0};
+        int [] staticsArray = archivo.getSeedsInTerrenos();
+
         /**
          * 0. Bosque coniferas
          * 1. Bosque fragmentado
@@ -78,9 +82,41 @@ public class Controlador{
 
                     int tipoArbol = vista.arbolesDisponibles(terrenoActual.getArbolesDispibles());
                     int cantidadSemillas = terrenoActual.calc_semilla(tipoArbol);
+                    //staticsArray[tipoArbol -1] += cantidadSemillas;
+
+                    staticsArray = archivo.actualizarArray(cantidadSemillas, terrenoActual.getTipoDeTerreno());
+
+                    /**
+                    switch (tipoTerreno) {
+                        case 0:
+                            staticsArray[0] += cantidadSemillas;
+                            break;
+                        case 2:
+                            staticsArray[1] += cantidadSemillas;
+                            break;
+                        case 3:
+                            staticsArray[2] += cantidadSemillas;
+                            break;
+                        case 4:
+                            staticsArray[3] += cantidadSemillas;
+                            break;
+                        case 5:
+                            staticsArray[4] += cantidadSemillas;
+                            break;
+                        case 6:
+                            staticsArray[5] += cantidadSemillas;
+                            break;
+                        case 7:
+                            staticsArray[6] += cantidadSemillas;
+                            break;
+                    }
+
+                    */
+
 
                     
-
+                    
+                    
                     Double tiempo;
 
                     try {
@@ -98,16 +134,20 @@ public class Controlador{
                     break;
                 
                 case 2: // Ver los resultados registrados.
+
+                    System.out.println(staticsArray.toString());
+                    System.out.println("DEBES BORRAR ESTO");
+                
                     // Devolver las estadísticas a la graficadora de python. 
                     // Solamente se enviarán los datos guardados. 
                     String statics;
-                    statics = seedsInTerrenos[0] + ", ";
-                    statics += seedsInTerrenos[1] + ", ";
-                    statics += seedsInTerrenos[2] + ", "; 
-                    statics += seedsInTerrenos[3] + ", "; 
-                    statics += seedsInTerrenos[4] + ", "; 
-                    statics += seedsInTerrenos[5] + ", ";
-                    statics += seedsInTerrenos[6] + ""; 
+                    statics = staticsArray[0] + ", ";
+                    statics += staticsArray[1] + ", ";
+                    statics += staticsArray[2] + ", "; 
+                    statics += staticsArray[3] + ", "; 
+                    statics += staticsArray[4] + ", "; 
+                    statics += staticsArray[5] + ", ";
+                    statics += staticsArray[6] + ""; 
 
                     String namesOfStatics = "Bosque coniferas, Bosque fragmentado, Bosque latifollado de altura, Bosque latifollado de baja elevacion, Bosque manglar, Bosque mixto, Bosque monte espinoso";
                     ScriptPython graficas = new ScriptPython();
@@ -125,7 +165,7 @@ public class Controlador{
                 case 3: // guardar los datos.
                     //boolean ans = false;
                     try {
-                        archivo.escribir2(seedsInTerrenos, "Resultados.txt");
+                        archivo.escribir2(staticsArray, "Resultados.txt");
                         
                     } catch (IOException e) {
                         // TODO Auto-generated catch block
