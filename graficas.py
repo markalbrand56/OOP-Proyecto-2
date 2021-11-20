@@ -3,11 +3,11 @@ import sys
 
 class Grafica(object):
     """Un objeto simple para graficar datos en una gráfica de barras con los resultados del programa en Java"""
-    def __init__(self, titulos, cantidades) -> None:
+    def __init__(self, titulos:list, cantidades:list) -> None:
         self.titulos = titulos
         self.cantidades = cantidades
     
-    def graficar(self):
+    def graficar(self) -> None:
         """Método para generar una gráfica de barraas"""
         plt.bar(self.titulos, self.cantidades)
         plt.show()
