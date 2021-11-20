@@ -15,8 +15,9 @@ public class Vista{
   private int anchoMinimo = 5;
 
   public Vista(){
-    logo();
+    
 		System.out.println("\n\nBienvenido\n\n");;
+    logo();
 	}
   /*Metodo para elegír una opción
   @return número de opción
