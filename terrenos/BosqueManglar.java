@@ -38,4 +38,11 @@ public class BosqueManglar extends Terreno {
   
           return cantidad_de_semillas;
      }
+
+     @Override
+     public String recomendaciones() {
+          // TODO Auto-generated method stub
+          return null;
+     }
+      
 }
