@@ -81,25 +81,20 @@ public class Archivos {
      */
     public boolean escribir2(int [] alString, String fileName)throws IOException{ // Método para escribir al final de un txt. 
         boolean exito; 
-        try {
-            ArrayList <String> temporal = new ArrayList<String>();
-            for(int i = 0; i<alString.length; i++){
-                temporal.add(alString[i]+"\n");
-            }
-
-            FileWriter fw = new FileWriter(fileName, false);
-            BufferedWriter bw = new BufferedWriter(fw);
-            String temporalString = temporal.get(temporal.size()-1);
-            temporalString = temporalString.substring(0, temporalString.length()-1);
-            for(int i = 0; i<temporal.size(); i++){
-                bw.write(temporal.get(i));
-            }
-            bw.close();
-
-            exito = true;
-        } catch (Exception e) {
-            exito = false;
+        ArrayList <String> temporal = new ArrayList<String>();
+        for(int i = 0; i<alString.length; i++){
+            temporal.add(alString[i]+"\n");
         }
+
+        FileWriter fw = new FileWriter(fileName, false);
+        BufferedWriter bw = new BufferedWriter(fw);
+        String temporalString = temporal.get(temporal.size()-1);
+        temporalString = temporalString.substring(0, temporalString.length()-1);
+        for(int i = 0; i<temporal.size(); i++){
+            bw.write(temporal.get(i));
+        }
+        bw.close();
+        exito = true;
         return exito;
     }
 
@@ -113,7 +108,6 @@ public class Archivos {
      */
     
     public void leer(String fileName){
-        //ArrayList <String> data = new ArrayList<String>();
         File file = new File(fileName);
         try {
             Scanner scan = new Scanner(file);
@@ -122,17 +116,14 @@ public class Archivos {
                 seedsInTerrenos[i] = Integer.parseInt(scan.nextLine());
                 i += 1;
             }
-            //while(scan.hasNextLine()){
-            //    data.add(scan.nextLine());
-            //}
             scan.close();
         } catch (Exception e) {
-            // ideas equivalentes a vista.error() ??? La verdad no se que mas hacer jaja. 
+            
         }
     }
 
     /**
-     * 
+     * Este método sirve para actualizar las semillas que se han guardado en el array de semillas. 
      * @param num las adiciones de semillas. 
      * @param tipo 
      * @return

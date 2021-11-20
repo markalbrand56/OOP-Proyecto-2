@@ -5,9 +5,6 @@
  */
 
 import java.io.IOException;
-
-import javax.xml.namespace.QName;
-
 import terrenos.*;
 
 public class Controlador{
@@ -31,17 +28,6 @@ public class Controlador{
         
         int opcion = vista.menuOpciones();
         int [] staticsArray = archivo.getSeedsInTerrenos();
-
-        /**
-         * 0. Bosque coniferas
-         * 1. Bosque fragmentado
-         * 2. Bosque latifollado
-         * 3. Bosque latifollado BE?
-         * 4. Bosque manglar
-         * 5. Bosque mixto
-         * 6. Bosque espinoso
-         */
-
         while (opcion != 5) {
             switch (opcion) {
                 case 1:
@@ -85,38 +71,6 @@ public class Controlador{
                     //staticsArray[tipoArbol -1] += cantidadSemillas;
 
                     staticsArray = archivo.actualizarArray(cantidadSemillas, terrenoActual.getTipoDeTerreno());
-
-                    /**
-                    switch (tipoTerreno) {
-                        case 0:
-                            staticsArray[0] += cantidadSemillas;
-                            break;
-                        case 2:
-                            staticsArray[1] += cantidadSemillas;
-                            break;
-                        case 3:
-                            staticsArray[2] += cantidadSemillas;
-                            break;
-                        case 4:
-                            staticsArray[3] += cantidadSemillas;
-                            break;
-                        case 5:
-                            staticsArray[4] += cantidadSemillas;
-                            break;
-                        case 6:
-                            staticsArray[5] += cantidadSemillas;
-                            break;
-                        case 7:
-                            staticsArray[6] += cantidadSemillas;
-                            break;
-                    }
-
-                    */
-
-
-                    
-                    
-                    
                     Double tiempo;
 
                     try {
@@ -170,6 +124,7 @@ public class Controlador{
                     } catch (IOException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
+                        vista.error();
                     }
                     break;
                     

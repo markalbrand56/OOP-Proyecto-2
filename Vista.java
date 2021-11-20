@@ -228,4 +228,9 @@ public class Vista{
     mensaje("La elevación varía desde el nivel del mar hasta los 300 m de altura. La vegetación natural está constituida mayormente por arbustos y plantas espinosas.");
     mensaje("Sus árboles suelen ser bastante capaces de resistir climas medianamente áridos, por lo que los cuidados de dichos árboles suelen ser más fáciles haciendo así más eficiente el proceso de reforestación de estos bosques.");
   }
+
+  public void error(){
+    System.out.println("Se ha producido un error");
+  }
+
 }
