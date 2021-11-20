@@ -111,9 +111,7 @@ public class Controlador{
                         //TODO: handle exception
                         vista.mensaje("No se ha podido generar la gráfica correctamente");
                     }
-
                     break;
-
 
                 case 3: // guardar los datos.
                     //boolean ans = false;
