@@ -16,7 +16,7 @@ public class Vista{
 
   public Vista(){
     
-		System.out.println("\n\nBienvenido\n\n");;
+		System.out.println("\n\n      Bienvenido      \n\n");;
     logo();
 	}
   /*Metodo para elegír una opción
