@@ -15,6 +15,7 @@ public class Vista{
   private int anchoMinimo = 5;
 
   public Vista(){
+    logo();
 		System.out.println("\n\nBienvenido\n\n");;
 	}
   /*Metodo para elegír una opción
@@ -231,6 +232,24 @@ public class Vista{
 
   public void error(){
     System.out.println("Se ha producido un error");
+  }
+
+  private void logo(){
+    System.out.println("       _-_");
+    System.out.println("    /~~   ~~\\");
+    System.out.println(" /~~         ~~\\");
+    System.out.println("{               }");
+    System.out.println(" \\  _-     -_  /");
+    System.out.println("   ~  \\\\ //  ~");
+    System.out.println("_- -   | | _- _");
+    System.out.println("  _ -  | |   -_");
+    System.out.println("      // \\\\");
+
+/**
+Thank you for visiting https://asciiart.website/
+This ASCII pic can be found at
+https://asciiart.website/index.php?art=plants/trees
+*/
   }
 
 }
