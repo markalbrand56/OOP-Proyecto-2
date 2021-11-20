@@ -17,15 +17,6 @@ import java.util.Scanner;
 public class Archivos {
     File archivo;
     int [] seedsInTerrenos = new int[7];
-    /**
-     * 0. Bosque coniferas
-     * 1. Bosque fragmentado
-     * 2. Bosque latifollado
-     * 3. Bosque latifollado BE?
-     * 4. Bosque manglar
-     * 5. Bosque mixto
-     * 6. Bosque espinoso
-     */
 
     /**
     * Constructor
@@ -97,9 +88,6 @@ public class Archivos {
         exito = true;
         return exito;
     }
-
-
-
     
     /**
      * Método para leer los archivos de un txt e ingresarlos en un Array de tipo int. 
