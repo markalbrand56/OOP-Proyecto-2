@@ -38,11 +38,11 @@ public class BosqueMixto extends Terreno {
            
       }
 
-     @Override
-     public String recomendaciones() {
-          // TODO Auto-generated method stub
-          return null;
-     }
+      @Override
+      public String recomendaciones() {
+          String s=""; 
+           return s;
+      }
       
      
 }

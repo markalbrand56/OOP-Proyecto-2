@@ -44,8 +44,8 @@ public class BosqueFragmentado extends Terreno {
 
    @Override
    public String recomendaciones() {
-        // TODO Auto-generated method stub
-        return null;
+       String s=""; 
+        return s;
    }
     
 }
