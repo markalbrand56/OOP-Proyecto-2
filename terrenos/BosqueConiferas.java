@@ -39,7 +39,7 @@ public class BosqueConiferas extends Terreno {
 
    @Override
    public String recomendaciones() {
-       String s=""; 
+       String s="Busca zonas donde la tierra esté dura y descubierta. La mayoría de las veces, este es un síntoma de suelo compactado. Siembra hierba en dichas zonas y asegúrate de regar y airear el suelo con frecuencia. Si no se corrige, el suelo que está por debajo puede volverse aún más denso mientras la capa superior erosiona, lo que hace que las condiciones de crecimiento sean inhóspitas o menos hospitalarias."; 
         return s;
    }
     

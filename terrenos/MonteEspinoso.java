@@ -45,7 +45,7 @@ public class MonteEspinoso extends Terreno {
 
    @Override
    public String recomendaciones() {
-       String s=""; 
+       String s="Hay una variedad de cosas que viven en el suelo que nos rodea. Usted puede agregar lombrices de tierra a su suelo para asegurar su salud. Se trata de un método de conservación que favorece la descomposición de la materia orgánica. Esto es lo que las lombrices de tierra hacen regularmente. Aumentan la capacidad del suelo para absorber nutrientes."; 
         return s;
    }
 }
