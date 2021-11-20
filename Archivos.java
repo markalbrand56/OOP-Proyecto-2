@@ -2,7 +2,6 @@
 Archivos.java
 Autor: Diego Morales, Jimena Hernandez, Mark Albrand, Javier Azurdia
 Fecha: 19/09/2021
-
 Responsable para la interacción va con archivos de texto
 ***************************************************/
 
@@ -11,12 +10,13 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Archivos {
     File archivo;
-    int [] seedsInTerrenos;
+    int [] seedsInTerrenos = new int[7];
     /**
      * 0. Bosque coniferas
      * 1. Bosque fragmentado
@@ -82,13 +82,20 @@ public class Archivos {
     public boolean escribir2(int [] alString, String fileName)throws IOException{ // Método para escribir al final de un txt. 
         boolean exito; 
         try {
+            ArrayList <String> temporal = new ArrayList<String>();
+            for(int i = 0; i<alString.length; i++){
+                temporal.add(alString[i]+"\n");
+            }
+
             FileWriter fw = new FileWriter(fileName, false);
             BufferedWriter bw = new BufferedWriter(fw);
-            
-            for(int i = 0; i<alString.length; i++){
-                bw.write("\n" + alString[i]); 
+            String temporalString = temporal.get(temporal.size()-1);
+            temporalString = temporalString.substring(0, temporalString.length()-1);
+            for(int i = 0; i<temporal.size(); i++){
+                bw.write(temporal.get(i));
             }
             bw.close();
+
             exito = true;
         } catch (Exception e) {
             exito = false;
