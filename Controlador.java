@@ -23,7 +23,7 @@ public class Controlador{
            archivo = new Archivos("Resultados.txt");
     
         } catch (Exception e) {
-            //TODO: handle exception
+            vista.mensaje("No se pudo abrir el archivo");
         }
         
         int opcion = vista.menuOpciones();
