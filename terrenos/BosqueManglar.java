@@ -41,7 +41,7 @@ public class BosqueManglar extends Terreno {
 
      @Override
      public String recomendaciones() {
-         String s=""; 
+         String s="El suelo requiere una cantidad adecuada de agua para funcionar correctamente. Muchas superficies de concreto, especialmente en áreas residenciales, hacen difícil que el agua llegue al suelo. Usando adoquines para los patios y jardines se trabaja para proteger el suelo. También son una herramienta para prevenir la erosión del suelo en áreas específicas."; 
           return s;
      }
       
