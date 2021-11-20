@@ -90,7 +90,6 @@ public class Controlador{
                 case 2: // Ver los resultados registrados.
 
                     System.out.println(staticsArray.toString());
-                    System.out.println("DEBES BORRAR ESTO");
                 
                     // Devolver las estadísticas a la graficadora de python. 
                     // Solamente se enviarán los datos guardados. 
@@ -107,10 +106,9 @@ public class Controlador{
                     ScriptPython graficas = new ScriptPython();
                     try {
                         graficas.runScript("graficas.py", namesOfStatics, statics);
-                        System.out.println("Se ha enviado los archivos al programa de python. DEBES ELIMINAR ESTO.");
                     } catch (Exception e) {
                         //TODO: handle exception
-                        System.out.println("Valio verga x2");
+                        vista.mensaje("No se ha podido generar la gráfica correctamente");
                     }
 
                     break;
@@ -122,8 +120,6 @@ public class Controlador{
                         archivo.escribir2(staticsArray, "Resultados.txt");
                         
                     } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
                         vista.error();
                     }
                     break;
