@@ -89,8 +89,6 @@ public class Controlador{
                     break;
                 
                 case 2: // Ver los resultados registrados.
-
-                    System.out.println(staticsArray.toString());
                 
                     // Devolver las estadísticas a la graficadora de python. 
                     // Solamente se enviarán los datos guardados. 

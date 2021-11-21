@@ -10,6 +10,8 @@ class Grafica(object):
     def graficar(self) -> None:
         """Método para generar una gráfica de barraas"""
         plt.bar(self.titulos, self.cantidades)
+        plt.title("Cantidad de semillas registradas para reforestación")
+        plt.ylabel("Cantidad de semillas")
         plt.show()
 
 ## EJECUCIÓN ##
