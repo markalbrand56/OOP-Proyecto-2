@@ -5,26 +5,30 @@
  */
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import terrenos.*;
 
 public class Controlador{
     private static Vista vista = new Vista();
     private static Terreno terrenoActual;
+    private static Archivos archivo;
     //private static GUI interfaz = new GUI();
-    private static Archivos archivos = new Archivos();
-
-    private static ArrayList<String> temporal = new ArrayList<String>();
-
+    
     /**
      * Método main del programa
      * @param args Argumentos de la línea de comando
      */
     public static void main(String[] args) {
+        
+        try {
+           archivo = new Archivos("Resultados.txt");
+    
+        } catch (Exception e) {
+            vista.mensaje("No se pudo abrir el archivo");
+        }
+        
         int opcion = vista.menuOpciones();
-
-        while (opcion != 6) {
+        int [] staticsArray = archivo.getSeedsInTerrenos();
+        while (opcion != 5) {
             switch (opcion) {
                 case 1:
                     // Datos de reforestación
@@ -64,67 +68,69 @@ public class Controlador{
 
                     int tipoArbol = vista.arbolesDisponibles(terrenoActual.getArbolesDispibles());
                     int cantidadSemillas = terrenoActual.calc_semilla(tipoArbol);
+                    //staticsArray[tipoArbol -1] += cantidadSemillas;
+
+                    staticsArray = archivo.actualizarArray(cantidadSemillas, terrenoActual.getTipoDeTerreno());
                     Double tiempo;
 
                     try {
-                        tiempo=terrenoActual.calc_tiempo(trabajadores, cantidadSemillas);                         
+                        tiempo=terrenoActual.calc_tiempo(trabajadores, cantidadSemillas);
                     } catch (ArithmeticException e) {
                         tiempo = 0.0;
                     }
                     vista.mensaje("\nSe necesitan " + cantidadSemillas + " semillas de " + terrenoActual.getArbol());
-                    
+
                     if (tiempo>0) {
-                        vista.mensaje("\nSe necesitan " + tiempo + " horas para plantar todas las semillas aproximadamente");                        
+                        vista.mensaje("\nSe necesitan " + tiempo + " horas para plantar todas las semillas aproximadamente");
+                        vista.mensaje(terrenoActual.recomendaciones());
                     }else{
                         vista.mensaje("No se pudo determinar el tiempo necesario para plantar todas las semillas.\n");
                     }
-
-
-                    /** Orden de elementos en cadena de texto de memoria temporal del programa. 
-                     * Area del terreno
-                     * Tipo del terreno
-                     * Tipo de Árbol de terreno
-                     * Tipo de semilla del terreno
-                     * Cantidad de semillas del terreno // pendiente. 
-                     * Cantidad de mano de obra
-                     * 
-                     */
-
-                    //Guardando datos en memoria temporal del programa. 
-                    temporal.add("Area: " + terrenoActual.getAreaDeTerreno() + ". Tipo: " + terrenoActual.getTipoDeTerreno() + ". Tipo de arboles: " + terrenoActual.getArbol() + ". Cantidad de personas: " + terrenoActual.getTrabajadores()+". Semillas necesarias: " + cantidadSemillas);
-
-                    break;
-                case 2:
-                    // Ver los resultados registrados. 
-                    // Se visualizarán solamente los resultados que ya han sido registrados. 
-                    ArrayList <String> mostrarArchivos = new ArrayList<String>();
-                    mostrarArchivos = archivos.leer("Resultados.txt");
-                    for(int i = 0; i<mostrarArchivos.size(); i++){
-                        vista.mensaje(mostrarArchivos.get(i));
-                    }
-
-                    break;
-                case 3: // guardar los datos. 
-                boolean ans = false;
-                try {
-                    ans = archivos.escribir(temporal, "Resultados.txt");
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                    if(ans == true){
-                        vista.mensaje("Se han guardado los datos");
-                        temporal.clear(); // se borrará la memoria temporal del programa. 
-                    }else{
-                        vista.mensaje("Ha ocurrido un error");
-                    }
-                    break;
-                case 4:  // Información 
-                vista.informacion();
                     break;
                 
-                case 5:  // Estadísticas
+                case 2: // Ver los resultados registrados.
+                
+                    // Devolver las estadísticas a la graficadora de python. 
+                    // Solamente se enviarán los datos guardados. 
+                    String statics;
+                    statics = staticsArray[0] + ", ";
+                    statics += staticsArray[1] + ", ";
+                    statics += staticsArray[2] + ", "; 
+                    statics += staticsArray[3] + ", "; 
+                    statics += staticsArray[4] + ", "; 
+                    statics += staticsArray[5] + ", ";
+                    statics += staticsArray[6] + ""; 
+
+                    String namesOfStatics = "Coniferas, Fragmentado, Latifollado A, Latifollado BA, Manglar, Mixto, Monte espinoso";
+                    ScriptPython graficas = new ScriptPython();
+                    try {
+                        graficas.runScript("graficas.py", namesOfStatics, statics);
+                    } catch (Exception e) {
+                        //TODO: handle exception
+                        vista.mensaje("No se ha podido generar la gráfica correctamente");
+                    }
                     break;
+
+                case 3: // guardar los datos.
+                    //boolean ans = false;
+                    try {
+                        archivo.escribir2(staticsArray, "Resultados.txt");
+                        
+                    } catch (IOException e) {
+                        vista.error();
+                    }
+                    break;
+                    
+                case 4:  // Información
+                    vista.informacion();
+                    break;
+
+                case 5:  // Información
+                    vista.despedida();
+                    break;
+
+
+
 
                 default:
                     break;

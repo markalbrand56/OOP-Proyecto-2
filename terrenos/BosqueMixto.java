@@ -37,6 +37,12 @@ public class BosqueMixto extends Terreno {
            return cantidad_de_semillas;
            
       }
+
+      @Override
+      public String recomendaciones() {
+          String s="\n"+"Consejo: Los niveles de pH en el suelo pueden verse afectados por una serie de factores. Los contaminantes y el ácido son sólo dos ejemplos en esta categoría. Comprar un analizador de suelo es una buena manera de monitorear los niveles de su suelo. Esto también le permite aprender lo que hay que añadir para asegurar un suelo sano y la conservación."; 
+           return s;
+      }
       
      
 }

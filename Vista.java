@@ -15,7 +15,9 @@ public class Vista{
   private int anchoMinimo = 5;
 
   public Vista(){
-		System.out.println("\n\nBienvenido\n\n");;
+    
+		System.out.println("\n\n    Bienvenido    \n\n");;
+    logo();
 	}
   /*Metodo para elegír una opción
   @return número de opción
@@ -28,16 +30,15 @@ public class Vista{
       try{
         String s = "\n\n¿Que desea hacer?\n" +
           "1. Calcular datos de reforestación para un area\n" +
-          "2. Ver áreas registradas\n" +
+          "2. Estadísticas\n" + 
           "3. Guardar datos\n" +
           "4. Información de terrenos\n" + 
-          "5. Estadísticas\n" + 
-          "6. Salir";
+          "5. Salir";
 
       System.out.println(s);
       op = scan.nextInt();
 
-      if(op<1 | op>6){
+      if(op<1 | op>5){
         throw new InputMismatchException("Elija una opción válida.");
       }else{
         ingresoCorrecto = true;
@@ -159,10 +160,16 @@ public class Vista{
       
   }
 
+  
   public void despedida(){
 		System.out.println("Gracias por usar este programa, adios");
 	}
 
+  /**
+   * ¿Qué árboles están disponibles?
+   * @param arboles array de Strings de árboles, que se mostrarán como lista  los usuarios. 
+   * @return opción que eligió el usuario. 
+   */
   public int arbolesDisponibles(String[] arboles){
     int opcion = 0;
     boolean ingresoCorrecto = false;
@@ -190,6 +197,9 @@ public class Vista{
   }
 
 
+  /**
+   * Método que muestra la información de todos los árboles. 
+   */
   public void informacion(){
     mensaje("Información sobre los tipos de bosques:");
     mensaje("\n 1. Bosque Coniferas: ");
@@ -220,4 +230,27 @@ public class Vista{
     mensaje("La elevación varía desde el nivel del mar hasta los 300 m de altura. La vegetación natural está constituida mayormente por arbustos y plantas espinosas.");
     mensaje("Sus árboles suelen ser bastante capaces de resistir climas medianamente áridos, por lo que los cuidados de dichos árboles suelen ser más fáciles haciendo así más eficiente el proceso de reforestación de estos bosques.");
   }
+
+  public void error(){
+    System.out.println("Se ha producido un error");
+  }
+
+  private void logo(){
+    System.out.println("       _-_");
+    System.out.println("    /~~   ~~\\");
+    System.out.println(" /~~         ~~\\");
+    System.out.println("{               }");
+    System.out.println(" \\  _-     -_  /");
+    System.out.println("   ~  \\\\ //  ~");
+    System.out.println("_- -   | | _- _");
+    System.out.println("  _ -  | |   -_");
+    System.out.println("      // \\\\");
+
+/**
+Thank you for visiting https://asciiart.website/
+This ASCII pic can be found at
+https://asciiart.website/index.php?art=plants/trees
+*/
+  }
+
 }

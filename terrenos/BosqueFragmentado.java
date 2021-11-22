@@ -41,4 +41,11 @@ public class BosqueFragmentado extends Terreno {
          return cantidad_de_semillas;
         
    }
+
+   @Override
+   public String recomendaciones() {
+       String s="\n"+"Consejo: Para que el suelo esté sano debe estar bien aireado. Cuando el suelo está compactado se impide el paso del agua y el aire, por lo tanto las raíces no reciben oxígeno. Esto es muy importante a la hora de plantar un árbol o una planta."; 
+        return s;
+   }
+    
 }

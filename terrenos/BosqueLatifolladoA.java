@@ -37,4 +37,13 @@ public class BosqueLatifolladoA extends Terreno {
   
           return cantidad_de_semillas;
      }
+
+     @Override
+     public String recomendaciones() {
+         String s="\n"+"Consejo: Antes de usar fertilizantes químicos, la mejor opción es usar suplementos para el suelo de origen natural, como una composta. Esto le da más oxigenación a la tierra, evita la erosión y retiene mejor la humedad."; 
+          return s;
+     }
+
+     
+      
 }
